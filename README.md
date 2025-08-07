@@ -78,7 +78,7 @@ This is a personal project showcasing my Power BI skills. While contributions vi
 
 Feel free to open an issue or contact me directly:
 
-GitHub: hrishikeshkulat-cmd
+GitHub: (https://github.com/hrishikeshkulat-cmd)
 
-LinkedIn: Hrishikesh Kulat
+LinkedIn: (https://linkedin.com/in/hrishikesh-kulat-28b559373)
 
