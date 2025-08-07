@@ -24,8 +24,8 @@ Microsoft Excel (for inspecting raw data)
 
 (Optional) Git to clone this repo
 
-🔧 Setup & Usage Clone the repo git clone https://github.com/hrishikeshkulat-cmd/mycompany-retail-dashboard.git cd mycompany-retail-dashboard
-
+🔧 Setup & Usage Clone the repo git clone https://github.com/hrishikeshkulat-cmd/mycmy-company-retail-dashboard
+/README.md
 Inspect & prepare data
 
 Open data/Store+Data.xlsx in Excel to review raw tables:
