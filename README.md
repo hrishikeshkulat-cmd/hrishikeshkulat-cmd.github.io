@@ -70,18 +70,15 @@ Total Sales = SUM('Orders'[SalesAmount]) Total Profit = SUM('Orders'[ProfitAmoun
 
 Full list of measures is documented within the PBIX file under the “Model” view.
 
-🤝 Contributing Fork this repository
+🤝 Feedback & Collaboration
 
-Create a feature branch (git checkout -b feature/YourFeature)
+This is a personal project showcasing my Power BI skills. While contributions via pull requests are welcome, you can also reach out directly for feedback or suggestions.
 
-Commit your changes (git commit -m "Add new visual")
+📬 Feedback & Questions
 
-Push to your branch (git push origin feature/YourFeature)
+Feel free to open an issue or contact me directly:
 
-Open a Pull Request
+GitHub: hrishikeshkulat-cmd
 
-📬 Feedback & Questions Feel free to open an issue or contact me directly:
+LinkedIn: Hrishikesh Kulat
 
-GitHub: (https://github.com/hrishikeshkulat-cmd)
-
-LinkedIn: (https://linkedin.com/in/hrishikesh-kulat-28b559373)
