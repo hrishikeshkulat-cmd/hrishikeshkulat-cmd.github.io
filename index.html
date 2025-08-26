@@ -3,24 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunshine's Portfolio</title>
+  <title>Hrishikesh Kulat - Data Analytics Portfolio</title>
+  
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="logo">Sunshine</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-chart-line logo-icon"></i>
+        <span>Sunshine</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="hamburger">
         <span></span>
@@ -31,132 +44,298 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero-section">
-    <div class="hero-content container">
-     <h1>Hello, I'm Hrishikesh Kulat</h1>
-      <h2><span class="typing"></span></h2>
-      <a href="#projects" class="scroll-down">
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Hello, I'm <span class="highlight">Hrishikesh Kulat</span></h1>
+        <h2 class="hero-subtitle">
+          <span id="typewriter"></span>
+          <span class="cursor">|</span>
+        </h2>
+        <p class="hero-description">
+          Passionate data analytics enthusiast with expertise in SQL, Power BI, and Python. 
+          I create insightful dashboards and interactive solutions.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i>
+            View My Work
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-envelope"></i>
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-down">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow">
         <i class="fas fa-chevron-down"></i>
-      </a>
+      </div>
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about" class="about-section container">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          I am Sunshine, a passionate data analytics enthusiast with expertise in SQL, Power BI, and Python. I love creating insightful dashboards and interactive data solutions that help businesses make informed decisions.
-        </p>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <div class="title-underline"></div>
       </div>
-      <div class="about-image">
-        <img src="assets/images/profile.png" alt="Sunshine Profile Picture" />
+      <div class="about-content">
+        <div class="about-image">
+          <div class="image-wrapper">
+            <img src="assets/images/profile.png" alt="Hrishikesh Kulat Profile Picture" />
+            <div class="image-overlay"></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="lead">
+            I am Sunshine, a passionate data analytics enthusiast with expertise in SQL, Power BI, and Python. 
+            I love creating insightful dashboards and interactive data solutions that help businesses make informed decisions.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number" data-target="15">0</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-target="5">0</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-target="100">0</div>
+              <div class="stat-label">Success Rate</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects container">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <figure class="project-card">
-        <img src="assets/images/Portfolio Website.png" alt="Portfolio Website" class="project-card__image" loading="lazy"/>
-        <div class="project-card__info">
-          <h3 class="project-card__title"><i class="fas fa-globe"></i> Portfolio Website</h3>
-          <p class="project-card__description">
-            Personal site to showcase profile and projects with modern design and interactive features.
-          </p>
-          <p class="project-card__tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" class="project-card__link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>My Projects</h2>
+        <div class="title-underline"></div>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/images/Portfolio Website.png" alt="Portfolio Website" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3><i class="fas fa-globe"></i> Portfolio Website</h3>
+            <p>Personal site to showcase profile and projects with modern design and interactive features.</p>
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
         </div>
-      </figure>
 
-      <!-- Project 2 -->
-      <figure class="project-card">
-        <img src="assets/images/Retail Sales Analytics.png" alt="Retail Sales Analytics Dashboard" class="project-card__image" loading="lazy"/>
-        <div class="project-card__info">
-          <h3 class="project-card__title"><i class="fas fa-shopping-cart"></i> Retail Sales Analytics Dashboard</h3>
-          <p class="project-card__description">
-            Comprehensive dashboard for retail sales KPIs and business insights with interactive visualizations.
-          </p>
-          <p class="project-card__tech"><strong>Tech:</strong> Power BI, SQL, Excel</p>
-          <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" class="project-card__link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/images/Retail Sales Analytics.png" alt="Retail Sales Analytics Dashboard" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3><i class="fas fa-shopping-cart"></i> Retail Sales Analytics</h3>
+            <p>Comprehensive dashboard for retail sales KPIs and business insights with interactive visualizations.</p>
+            <div class="tech-stack">
+              <span>Power BI</span>
+              <span>SQL</span>
+              <span>Excel</span>
+            </div>
+          </div>
         </div>
-      </figure>
 
-      <!-- Project 3 -->
-      <figure class="project-card">
-        <img src="assets/images/pizza sales analytics.png" alt="Pizza Sales Analytics Dashboard" class="project-card__image" loading="lazy"/>
-        <div class="project-card__info">
-          <h3 class="project-card__title"><i class="fas fa-pizza-slice"></i> Pizza Sales Analytics Dashboard</h3>
-          <p class="project-card__description">
-            Advanced dashboard analyzing pizza sales performance with SQL-based metrics and trend analysis.
-          </p>
-          <p class="project-card__tech"><strong>Tech:</strong> Power BI, SQL, Excel</p>
-          <a href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" class="project-card__link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/images/pizza sales analytics.png" alt="Pizza Sales Analytics Dashboard" />
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3><i class="fas fa-pizza-slice"></i> Pizza Sales Analytics</h3>
+            <p>Advanced dashboard analyzing pizza sales performance with SQL-based metrics and trend analysis.</p>
+            <div class="tech-stack">
+              <span>Power BI</span>
+              <span>SQL</span>
+              <span>Excel</span>
+            </div>
+          </div>
         </div>
-      </figure>
+      </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="skills-section container">
-    <h2>Skills & Tools</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>HTML</h3>
-        <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>Skills & Tools</h2>
+        <div class="title-underline"></div>
       </div>
-      <div class="skill-card">
-        <h3>CSS</h3>
-        <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
-      </div>
-      <div class="skill-card">
-        <h3>JavaScript</h3>
-        <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-      </div>
-      <div class="skill-card">
-        <h3>SQL</h3>
-        <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
-      </div>
-      <div class="skill-card">
-        <h3>Power BI</h3>
-        <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <h3>HTML</h3>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="95%"></div>
+          </div>
+          <span class="skill-percent">95%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <h3>CSS</h3>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90%"></div>
+          </div>
+          <span class="skill-percent">90%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fab fa-js-square"></i>
+          </div>
+          <h3>JavaScript</h3>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85%"></div>
+          </div>
+          <span class="skill-percent">85%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>SQL</h3>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90%"></div>
+          </div>
+          <span class="skill-percent">90%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Power BI</h3>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="95%"></div>
+          </div>
+          <span class="skill-percent">95%</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-<!-- Contact Section -->
-<section id="contact" class="contact-section container">
-  <h2>Contact Me</h2>
-  <div class="contact-content">
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required/>
-      <input type="email" name="email" placeholder="Your Email" required/>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> hrishikeshklat@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91-9834678227</p>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/hrishikeshkulat-cmd" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+        <div class="title-underline"></div>
+      </div>
+      <div class="contact-content">
+        <div class="contact-form">
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:hrishikeshklat@gmail.com">hrishikeshklat@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <a href="tel:+919834678227">+91-9834678227</a>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/hrishikeshkulat-cmd" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 Sunshine. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 Hrishikesh Kulat (Sunshine). All rights reserved.</p>
+    </div>
   </footer>
 
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
   <!-- JS -->
   <script src="js/script.js"></script>
 </body>
