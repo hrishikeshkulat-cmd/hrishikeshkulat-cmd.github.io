@@ -1,28 +1,87 @@
-// projects.js
+/* ===== Typing Animation ===== */
+const typingText = ["Data Analyst", "Power BI Enthusiast", "SQL Expert"];
+let typingIndex = 0;
+let charIndex = 0;
+let typingDelay = 150;
+let erasingDelay = 100;
+let newTextDelay = 2000; // Delay between phrases
+const typingElement = document.querySelector(".typing");
 
-(() => {
-  'use strict';
+function type() {
+  if (charIndex < typingText[typingIndex].length) {
+    typingElement.textContent += typingText[typingIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } else {
+    setTimeout(erase, newTextDelay);
+  }
+}
 
-  // 1. Grab all project cards
-  const cards = document.querySelectorAll('.project-card');
+function erase() {
+  if (charIndex > 0) {
+    typingElement.textContent = typingText[typingIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } else {
+    typingIndex = (typingIndex + 1) % typingText.length;
+    setTimeout(type, typingDelay + 500);
+  }
+}
 
-  // 2. Build an IntersectionObserver
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach(({ isIntersecting, target }) => {
-        if (!isIntersecting) return;
-        target.classList.add('visible');
-        obs.unobserve(target);
-      });
-    },
-    { threshold: 0.15 }
-  );
+document.addEventListener("DOMContentLoaded", function () {
+  if (typingText.length) setTimeout(type, newTextDelay);
+});
 
-  // 3. Observe each card
-  cards.forEach(card => {
-    // Ensure your CSS has something like
-    // .project-card { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
-    // .project-card.visible { opacity: 1; transform: translateY(0); }
-    observer.observe(card);
+
+/* ===== Project Cards Fade-In on Scroll ===== */
+const projectCards = document.querySelectorAll(".project-card");
+
+function checkProjectCards() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+
+  projectCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if(cardTop < triggerBottom) {
+      card.classList.add("show");
+    }
   });
-})();
+}
+
+window.addEventListener("scroll", checkProjectCards);
+checkProjectCards();
+
+
+/* ===== Hamburger Menu ===== */
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("nav-active");
+  hamburger.classList.toggle("toggle");
+});
+
+/* Animate hamburger bars */
+hamburger.addEventListener("click", () => {
+  const spans = hamburger.querySelectorAll("span");
+  spans.forEach((span, index) => {
+    span.classList.toggle(`span-${index+1}-active`);
+  });
+});
+
+
+/* ===== Smooth Scroll for Anchor Links ===== */
+const anchors = document.querySelectorAll('a[href^="#"]');
+
+anchors.forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if(target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+});
