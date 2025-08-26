@@ -282,3 +282,7 @@ footer {
     gap: 30px;
     margin-top: 30px;
 }
+.project-card img {
+    display: block;
+    margin: 0 auto;
+}
