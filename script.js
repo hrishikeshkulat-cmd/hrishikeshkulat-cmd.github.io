@@ -1,65 +1,28 @@
+// projects.js
+
 (() => {
   'use strict';
 
-  /*----------------------------------------
-    Constants & Element References
-  ----------------------------------------*/
-  const THEME_KEY      = 'theme';
-  const themeSwitch    = document.querySelector('.theme-switch input[type="checkbox"]');
-  const loadingScreen  = document.getElementById('loading');
-  const fadeElements   = document.querySelectorAll('.fade-in');
-  const OBSERVER_OPTS  = { threshold: 0.1 };
+  // 1. Grab all project cards
+  const cards = document.querySelectorAll('.project-card');
 
-  /*----------------------------------------
-    Theme Management
-  ----------------------------------------*/
-  const applyTheme = theme => {
-    document.body.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem(THEME_KEY, theme);
-  };
-
-  const initTheme = () => {
-    const saved       = localStorage.getItem(THEME_KEY);
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const current     = saved || (prefersDark ? 'dark' : 'light');
-
-    themeSwitch.checked = current === 'dark';
-    applyTheme(current);
-  };
-
-  themeSwitch.addEventListener('change', e => {
-    applyTheme(e.target.checked ? 'dark' : 'light');
-  });
-
-  /*----------------------------------------
-    Fade‐In on Scroll
-  ----------------------------------------*/
-  const fadeObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(({ isIntersecting, target }) => {
-      if (isIntersecting) {
+  // 2. Build an IntersectionObserver
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(({ isIntersecting, target }) => {
+        if (!isIntersecting) return;
         target.classList.add('visible');
-        observer.unobserve(target);
-      }
-    });
-  }, OBSERVER_OPTS);
+        obs.unobserve(target);
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-  const initFadeIn = () => {
-    fadeElements.forEach(el => fadeObserver.observe(el));
-  };
-
-  /*----------------------------------------
-    Loading Screen Removal
-  ----------------------------------------*/
-  window.addEventListener('load', () => {
-    if (loadingScreen) {
-      loadingScreen.classList.add('loaded');
-      setTimeout(() => loadingScreen.remove(), 300);
-    }
-    initFadeIn();
+  // 3. Observe each card
+  cards.forEach(card => {
+    // Ensure your CSS has something like
+    // .project-card { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
+    // .project-card.visible { opacity: 1; transform: translateY(0); }
+    observer.observe(card);
   });
-
-  /*----------------------------------------
-    Initialization
-  ----------------------------------------*/
-  initTheme();
 })();
