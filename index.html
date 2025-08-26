@@ -1,203 +1,134 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hrishikesh Kulat – Portfolio</title>
+
+  <!-- Performance: preconnect to CDN -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Core Styles -->
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (kept original path) with integrity for security -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-ku1XNThs2rTQ+2u6zzj9P5BoN3c5tP7b9e3knKbk1SkD+QIsYOE8vQuZ0bVjfP69SvefTskcF2HsS8Xr2elZ2Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
+
 <body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   <!-- Loading Screen -->
-  <div class="loading" id="loading">
-    <div class="loader"></div>
+  <div
+    id="loading"
+    class="loading"
+    role="status"
+    aria-live="polite"
+  >
+    <div class="loader" aria-hidden="true"></div>
+    <span class="visually-hidden">Loading content…</span>
   </div>
 
-  <!-- Floating Particles -->
-  <div class="particles" id="particles"></div>
-
-  <!-- Dark/Light Mode Toggle -->
-  <div class="theme-switch-wrapper">
+  <!-- Theme Toggle -->
+  <div
+    class="theme-switch-wrapper"
+    role="toolbar"
+    aria-label="Toggle dark mode"
+  >
     <input
       type="checkbox"
       id="checkbox"
-      aria-label="Toggle dark mode"
+      aria-label="Dark mode toggle"
     />
     <label class="theme-switch" for="checkbox">
-      <div class="slider round"></div>
+      <div class="slider round" aria-hidden="true"></div>
     </label>
-    <em>Dark Mode</em>
+    <span class="theme-label">Dark Mode</span>
   </div>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#home" aria-current="page"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-      <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
-      <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
-      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Site Header -->
+  <header>
+    <!-- Navigation -->
+    <nav
+      id="main-nav"
+      class="nav container"
+      role="navigation"
+      aria-label="Primary"
+    >
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#home" class="nav__link" aria-current="page">
+            <i class="fas fa-home" aria-hidden="true"></i>
+            Home
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#about" class="nav__link">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            About
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#projects" class="nav__link">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+            Projects
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#skills" class="nav__link">
+            <i class="fas fa-cogs" aria-hidden="true"></i>
+            Skills
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-  <!-- Hero Section -->
-  <header id="home" class="hero">
-    <div class="hero-content">
-      <h1>Hrishikesh Kulat</h1>
-      <p class="title">
-        <i class="fas fa-chart-line"></i> Aspiring Data Analyst | SQL • Python • Power BI
-      </p>
-      <p class="tagline">
-        "Transforming raw data into actionable insights with clean dashboards
-        & efficient queries."
-      </p>
-      <a href="HRISHIKESH KULAT RESUME.pdf" class="btn" download>
-        <i class="fas fa-download"></i> Download Resume
-      </a>
+    <!-- Hero Section -->
+    <div
+      id="home"
+      class="hero container"
+      role="banner"
+      aria-labelledby="hero-title"
+    >
+      <div class="hero-content">
+        <h1 id="hero-title">Hrishikesh Kulat</h1>
+        <p class="title">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+          Aspiring Data Analyst | SQL • Python • Power BI
+        </p>
+        <p class="tagline">
+          "Transforming raw data into actionable insights with clean
+          dashboards & efficient queries."
+        </p>
+        <a
+          href="HRISHIKESH KULAT RESUME.pdf"
+          class="btn"
+          download
+          role="button"
+        >
+          <i class="fas fa-download" aria-hidden="true"></i>
+          Download Resume
+        </a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- About Section -->
-    <section id="about" class="container fade-in">
-      <div class="profile-container">
-        <img
-          src="assets/images/profile-pic.jpg"
-          alt="Hrishikesh Kulat"
-          class="profile-pic"
-          loading="lazy"
-        />
-        <div class="about-text">
-          <h1>Hrishikesh Kulat</h1>
-          <p><i class="fas fa-database"></i> Data Analytics Fresher | SQL | Python | Power BI</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container fade-in">
-      <h2><i class="fas fa-briefcase"></i> Projects</h2>
-      <div class="projects-grid">
-
-        <!-- Project Card 1 -->
-        <figure class="project-card">
-          <div class="device-mockup">
-            <img
-              src="assets/images/Portfolio Website.png"
-              alt="Portfolio Website"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>
-            <h3><i class="fas fa-globe"></i> Portfolio Website</h3>
-            <p>Personal site to showcase profile and projects with modern design and interactive features.</p>
-            <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-            <a
-              href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </figcaption>
-        </figure>
-
-        <!-- Project Card 2 -->
-        <figure class="project-card">
-          <div class="device-mockup tablet">
-            <img
-              src="assets/images/Retail Sales Analytics.png"
-              alt="Retail Sales Analytics Dashboard"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>
-            <h3><i class="fas fa-shopping-cart"></i> Retail Sales Analytics Dashboard</h3>
-            <p>Comprehensive dashboard for retail sales KPIs and business insights with interactive visualizations.</p>
-            <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
-            <a
-              href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </figcaption>
-        </figure>
-
-        <!-- Project Card 3 -->
-        <figure class="project-card">
-          <div class="device-mockup tablet">
-            <img
-              src="assets/images/pizza sales analytics.png"
-              alt="Pizza Sales Analytics Dashboard"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>
-            <h3><i class="fas fa-pizza-slice"></i> Pizza Sales Analytics Dashboard</h3>
-            <p>Advanced dashboard analyzing pizza sales performance with SQL-based metrics and trend analysis.</p>
-            <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
-            <a
-              href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </figcaption>
-        </figure>
-
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="container fade-in">
-      <h2><i class="fas fa-cogs"></i> Skills</h2>
-      <div class="skills-list">
-        <div class="skill"><i class="fas fa-database"></i> SQL</div>
-        <div class="skill"><i class="fab fa-python"></i> Python (pandas, matplotlib)</div>
-        <div class="skill"><i class="fas fa-chart-bar"></i> Power BI</div>
-        <div class="skill"><i class="fas fa-file-excel"></i> Excel</div>
-        <div class="skill"><i class="fab fa-git-alt"></i> Git / GitHub</div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container fade-in">
-      <h2><i class="fas fa-envelope"></i> Contact</h2>
-      <p>
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a>
-      </p>
-      <p>
-        <i class="fas fa-phone"></i>
-        <a href="tel:+919834678227">+91 98346 78227</a>
-      </p>
-      <p>
-        <i class="fab fa-linkedin"></i>
-        <a
-          href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373"
-          target="_blank"
-          rel="noopener"
-        >linkedin.com/in/hrishikesh-kulat-28b559373</a>
-      </p>
-      <p>
-        <i class="fab fa-github"></i>
-        <a
-          href="https://github.com/hrishikeshkulat-cmd"
-          target="_blank"
-          rel="noopener"
-        >github.com/hrishikeshkulat-cmd</a>
-      </p>
-    </section>
+  <main id="main">
+    <!-- Next up: About section’s HTML -->
   </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Hrishikesh Kulat. All rights reserved.</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
