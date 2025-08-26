@@ -1,120 +1,100 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hrishikesh Kulat - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
-</head>
-<body>
-    <!-- Dark/Light Mode Toggle Switch (fixed position at top-right) -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox"/>
-            <div class="slider round"></div>
-        </label>
-        <em>Enable Dark Mode!</em>
-    </div>
-    
-    <!-- Navigation Bar (sticky at top) -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<section
+  id="projects"
+  class="projects container fade-in"
+  role="region"
+  aria-labelledby="projects-title"
+>
+  <h2 id="projects-title" class="section__title">
+    <i class="fas fa-briefcase" aria-hidden="true"></i>
+    Projects
+  </h2>
 
-    <!-- Header / Hero Section -->
-    <header id="home">
-        <h1>Hrishikesh Kulat</h1>
-        <p class="title">Aspiring Data Analyst | SQL &bull; Python &bull; Power BI</p>
-        <p class="tagline">&ldquo;Transforming raw data into actionable insights with clean dashboards &amp; efficient queries.&rdquo;</p>
-        <!-- Downloadable Resume Button -->
-        <a href="HRISHIKESH KULAT RESUME.pdf" class="btn" download>Download Resume</a>
-    </header>
+  <div class="projects-grid">
+    <!-- Project Card 1 -->
+    <figure class="project-card">
+      <img
+        src="assets/images/Portfolio Website.png"
+        alt="Portfolio Website"
+        class="project-card__image"
+        loading="lazy"
+      />
+      <div class="project-card__info">
+        <h3 class="project-card__title">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          Portfolio Website
+        </h3>
+        <p class="project-card__description">
+          Personal site to showcase profile and projects with modern design and interactive features.
+        </p>
+        <p class="project-card__tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+        <a
+          href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io"
+          class="project-card__link"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fab fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+      </div>
+    </figure>
 
-    <!-- About Section -->
-    <section id="about">
-    <div class="profile-container">
-      <img src="assets/images/profile-pic.jpg" alt="Hrishikesh Kulat" class="profile-pic">
-        <div class="about-text">
-            <h1>Hrishikesh Kulat</h1>
-            <p>Data Analytics Fresher | SQL | Python | Power BI</p>
-        </div>
-    </div>
+    <!-- Project Card 2 -->
+    <figure class="project-card">
+      <img
+        src="assets/images/Retail Sales Analytics.png"
+        alt="Retail Sales Analytics Dashboard"
+        class="project-card__image"
+        loading="lazy"
+      />
+      <div class="project-card__info">
+        <h3 class="project-card__title">
+          <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+          Retail Sales Analytics Dashboard
+        </h3>
+        <p class="project-card__description">
+          Comprehensive dashboard for retail sales KPIs and business insights with interactive visualizations.
+        </p>
+        <p class="project-card__tech"><strong>Tech:</strong> Power BI, SQL, Excel</p>
+        <a
+          href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io"
+          class="project-card__link"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fab fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+      </div>
+    </figure>
+
+    <!-- Project Card 3 -->
+    <figure class="project-card">
+      <img
+        src="assets/images/pizza sales analytics.png"
+        alt="Pizza Sales Analytics Dashboard"
+        class="project-card__image"
+        loading="lazy"
+      />
+      <div class="project-card__info">
+        <h3 class="project-card__title">
+          <i class="fas fa-pizza-slice" aria-hidden="true"></i>
+          Pizza Sales Analytics Dashboard
+        </h3>
+        <p class="project-card__description">
+          Advanced dashboard analyzing pizza sales performance with SQL-based metrics and trend analysis.
+        </p>
+        <p class="project-card__tech"><strong>Tech:</strong> Power BI, SQL, Excel</p>
+        <a
+          href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD"
+          class="project-card__link"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fab fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+      </div>
+    </figure>
+  </div>
 </section>
-
-<!-- Projects Section -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-
-        <!-- Project Card 1 -->
-        <div class="project-card">
-            <img src="assets/images/Portfolio Website.png" alt="Portfolio Website" class="project-image">
-            <h3>Portfolio Website</h3>
-            <p>Personal site to showcase profile and projects.</p>
-            <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">GitHub</a>
-        </div>
-
-        <!-- Project Card 2 -->
-        <div class="project-card">
-            <img src="assets/images/Retail Sales Analytics.png" alt="Retail sales analytics" class="project-image">
-            <h3>Retail Sales Analytics Dashboard</h3>
-            <p>Dashboard for retail sales KPIs and insights.</p>
-            <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
-            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">GitHub</a>
-        </div>
-
-        <!-- Project Card 3 -->
-        <div class="project-card">
-            <img src="assets/images/pizza sales analytics.png" alt="Pizza Sales Analytics Dashboard" class="project-image">
-            <h3>Pizza Sales Analytics Dashboard</h3>
-            <p>Dashboard analyzing pizza sales performance and SQL-based metrics.</p>
-            <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
-            <a href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" target="_blank">GitHub</a>
-        </div>
-
-    </div>
-</section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <!-- Each skill displayed as a responsive pill/card -->
-            <div class="skill">SQL</div>
-            <div class="skill">Python (pandas, matplotlib)</div>
-            <div class="skill">Power BI</div>
-            <div class="skill">Excel</div>
-            <div class="skill">Git / GitHub</div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></p>
-        <p>Phone: <a href="tel:+919834678227">+91 98346 78227</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></p>
-        <p>GitHub: <a href="https://github.com/hrishikeshkulat-cmd" target="_blank">github.com/hrishikeshkulat-cmd</a></p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Hrishikesh Kulat</p>
-    </footer>
-
-    <script src="script.js"></script> <!-- Link to external JS -->
-</body>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
