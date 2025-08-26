@@ -1,133 +1,118 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hrishikesh Kulat – Portfolio</title>
-
-  <!-- Performance: preconnect to CDN -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-
-  <!-- Core Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Font Awesome (kept original path) with integrity for security -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-ku1XNThs2rTQ+2u6zzj9P5BoN3c5tP7b9e3knKbk1SkD+QIsYOE8vQuZ0bVjfP69SvefTskcF2HsS8Xr2elZ2Q=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hrishikesh Kulat - Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
-
 <body>
-  <!-- Skip link for accessibility -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- Loading Screen -->
-  <div
-    id="loading"
-    class="loading"
-    role="status"
-    aria-live="polite"
-  >
-    <div class="loader" aria-hidden="true"></div>
-    <span class="visually-hidden">Loading content…</span>
-  </div>
-
-  <!-- Theme Toggle -->
-  <div
-    class="theme-switch-wrapper"
-    role="toolbar"
-    aria-label="Toggle dark mode"
-  >
-    <input
-      type="checkbox"
-      id="checkbox"
-      aria-label="Dark mode toggle"
-    />
-    <label class="theme-switch" for="checkbox">
-      <div class="slider round" aria-hidden="true"></div>
-    </label>
-    <span class="theme-label">Dark Mode</span>
-  </div>
-
-  <!-- Site Header -->
-  <header>
-    <!-- Navigation -->
-    <nav
-      id="main-nav"
-      class="nav container"
-      role="navigation"
-      aria-label="Primary"
-    >
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="#home" class="nav__link" aria-current="page">
-            <i class="fas fa-home" aria-hidden="true"></i>
-            Home
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#about" class="nav__link">
-            <i class="fas fa-user" aria-hidden="true"></i>
-            About
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#projects" class="nav__link">
-            <i class="fas fa-briefcase" aria-hidden="true"></i>
-            Projects
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#skills" class="nav__link">
-            <i class="fas fa-cogs" aria-hidden="true"></i>
-            Skills
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#contact" class="nav__link">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            Contact
-          </a>
-        </li>
-      </ul>
+    <!-- Dark/Light Mode Toggle Switch (fixed position at top-right) -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox"/>
+            <div class="slider round"></div>
+        </label>
+        <em>Enable Dark Mode!</em>
+    </div>
+    
+    <!-- Navigation Bar (sticky at top) -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <div
-      id="home"
-      class="hero container"
-      role="banner"
-      aria-labelledby="hero-title"
-    >
-      <div class="hero-content">
-        <h1 id="hero-title">Hrishikesh Kulat</h1>
-        <p class="title">
-          <i class="fas fa-chart-line" aria-hidden="true"></i>
-          Aspiring Data Analyst | SQL • Python • Power BI
-        </p>
-        <p class="tagline">
-          "Transforming raw data into actionable insights with clean
-          dashboards & efficient queries."
-        </p>
-        <a
-          href="HRISHIKESH KULAT RESUME.pdf"
-          class="btn"
-          download
-          role="button"
-        >
-          <i class="fas fa-download" aria-hidden="true"></i>
-          Download Resume
-        </a>
-      </div>
-    </div>
-  </header>
+    <!-- Header / Hero Section -->
+    <header id="home">
+        <h1>Hrishikesh Kulat</h1>
+        <p class="title">Aspiring Data Analyst | SQL &bull; Python &bull; Power BI</p>
+        <p class="tagline">&ldquo;Transforming raw data into actionable insights with clean dashboards &amp; efficient queries.&rdquo;</p>
+        <!-- Downloadable Resume Button -->
+        <a href="HRISHIKESH KULAT RESUME.pdf" class="btn" download>Download Resume</a>
+    </header>
 
-  <main id="main">
-    <!-- Next up: About section’s HTML -->
+    <!-- About Section -->
+    <section id="about">
+    <div class="profile-container">
+      <img src="assets/images/profile-pic.jpg" alt="Hrishikesh Kulat" class="profile-pic">
+        <div class="about-text">
+            <h1>Hrishikesh Kulat</h1>
+            <p>Data Analytics Fresher | SQL | Python | Power BI</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+        <!-- Project Card 1 -->
+        <div class="project-card">
+            <img src="assets/images/Portfolio Website.png" alt="Portfolio Website" class="project-image">
+            <h3>Portfolio Website</h3>
+            <p>Personal site to showcase profile and projects.</p>
+            <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">GitHub</a>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card">
+            <img src="assets/images/Retail Sales Analytics.png" alt="Retail sales analytics" class="project-image">
+            <h3>Retail Sales Analytics Dashboard</h3>
+            <p>Dashboard for retail sales KPIs and insights.</p>
+            <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
+            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">GitHub</a>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card">
+            <img src="assets/images/pizza sales analytics.png" alt="Pizza Sales Analytics Dashboard" class="project-image">
+            <h3>Pizza Sales Analytics Dashboard</h3>
+            <p>Dashboard analyzing pizza sales performance and SQL-based metrics.</p>
+            <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
+            <a href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" target="_blank">GitHub</a>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <!-- Each skill displayed as a responsive pill/card -->
+            <div class="skill">SQL</div>
+            <div class="skill">Python (pandas, matplotlib)</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">Excel</div>
+            <div class="skill">Git / GitHub</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919834678227">+91 98346 78227</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></p>
+        <p>GitHub: <a href="https://github.com/hrishikeshkulat-cmd" target="_blank">github.com/hrishikeshkulat-cmd</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Hrishikesh Kulat</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to external JS -->
+</body>
+
   </main>
 
   <script src="script.js"></script>
