@@ -2,115 +2,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hrishikesh Kulat - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hrishikesh Kulat – Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Dark/Light Mode Toggle Switch (fixed position at top-right) -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox"/>
-            <div class="slider round"></div>
-        </label>
-        <em>Enable Dark Mode!</em>
+  <!-- Dark/Light Mode Toggle -->
+  <div class="theme-switch-wrapper">
+    <input
+      type="checkbox"
+      id="checkbox"
+      aria-label="Toggle dark mode"
+    />
+    <label class="theme-switch" for="checkbox">
+      <div class="slider round"></div>
+    </label>
+    <em>Enable Dark Mode!</em>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home" aria-current="page">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hrishikesh Kulat</h1>
+      <p class="title">
+        Aspiring Data Analyst | SQL • Python • Power BI
+      </p>
+      <p class="tagline">
+        “Transforming raw data into actionable insights with clean dashboards
+        & efficient queries.”
+      </p>
+      <a href="HRISHIKESH KULAT RESUME.pdf" class="btn" download>
+        Download Resume
+      </a>
     </div>
-    
-    <!-- Navigation Bar (sticky at top) -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  </header>
 
-    <!-- Header / Hero Section -->
-    <header id="home">
-        <h1>Hrishikesh Kulat</h1>
-        <p class="title">Aspiring Data Analyst | SQL &bull; Python &bull; Power BI</p>
-        <p class="tagline">&ldquo;Transforming raw data into actionable insights with clean dashboards &amp; efficient queries.&rdquo;</p>
-        <!-- Downloadable Resume Button -->
-        <a href="HRISHIKESH KULAT RESUME.pdf" class="btn" download>Download Resume</a>
-    </header>
-
+  <main>
     <!-- About Section -->
-    <section id="about">
-    <div class="profile-container">
-      <img src="assets/images/profile-pic.jpg" alt="Hrishikesh Kulat" class="profile-pic">
+    <section id="about" class="container">
+      <div class="profile-container">
+        <img
+          src="assets/images/profile-pic.jpg"
+          alt="Hrishikesh Kulat"
+          class="profile-pic"
+          loading="lazy"
+        />
         <div class="about-text">
-            <h1>Hrishikesh Kulat</h1>
-            <p>Data Analytics Fresher | SQL | Python | Power BI</p>
+          <h1>Hrishikesh Kulat</h1>
+          <p>Data Analytics Fresher | SQL | Python | Power BI</p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Projects Section -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
 
         <!-- Project Card 1 -->
-        <div class="project-card">
-            <img src="assets/images/Portfolio Website.png" alt="Portfolio Website" class="project-image">
+        <figure class="project-card">
+          <div class="device-mockup">
+            <img
+              src="assets/images/Portfolio Website.png"
+              alt="Portfolio Website"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
             <h3>Portfolio Website</h3>
             <p>Personal site to showcase profile and projects.</p>
             <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">GitHub</a>
-        </div>
+            <a
+              href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+          </figcaption>
+        </figure>
 
         <!-- Project Card 2 -->
-        <div class="project-card">
-            <img src="assets/images/Retail Sales Analytics.png" alt="Retail sales analytics" class="project-image">
+        <figure class="project-card">
+          <div class="device-mockup tablet">
+            <img
+              src="assets/images/Retail Sales Analytics.png"
+              alt="Retail Sales Analytics Dashboard"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
             <h3>Retail Sales Analytics Dashboard</h3>
             <p>Dashboard for retail sales KPIs and insights.</p>
             <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
-            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank">GitHub</a>
-        </div>
+            <a
+              href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+          </figcaption>
+        </figure>
 
         <!-- Project Card 3 -->
-        <div class="project-card">
-            <img src="assets/images/pizza sales analytics.png" alt="Pizza Sales Analytics Dashboard" class="project-image">
+        <figure class="project-card">
+          <div class="device-mockup tablet">
+            <img
+              src="assets/images/pizza sales analytics.png"
+              alt="Pizza Sales Analytics Dashboard"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>
             <h3>Pizza Sales Analytics Dashboard</h3>
             <p>Dashboard analyzing pizza sales performance and SQL-based metrics.</p>
             <p><strong>Tech:</strong> Power BI, SQL, Excel</p>
-            <a href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" target="_blank">GitHub</a>
-        </div>
+            <a
+              href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+          </figcaption>
+        </figure>
 
-    </div>
-</section>
+      </div>
+    </section>
 
     <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <!-- Each skill displayed as a responsive pill/card -->
-            <div class="skill">SQL</div>
-            <div class="skill">Python (pandas, matplotlib)</div>
-            <div class="skill">Power BI</div>
-            <div class="skill">Excel</div>
-            <div class="skill">Git / GitHub</div>
-        </div>
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div class="skill">SQL</div>
+        <div class="skill">Python (pandas, matplotlib)</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Excel</div>
+        <div class="skill">Git / GitHub</div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></p>
-        <p>Phone: <a href="tel:+919834678227">+91 98346 78227</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></p>
-        <p>GitHub: <a href="https://github.com/hrishikeshkulat-cmd" target="_blank">github.com/hrishikeshkulat-cmd</a></p>
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>
+        Email:
+        <a href="mailto:hrishikeshkulat@gmail.com"
+          >hrishikeshkulat@gmail.com</a
+        >
+      </p>
+      <p>
+        Phone:
+        <a href="tel:+919834678227">+91 98346 78227</a>
+      </p>
+      <p>
+        LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373"
+          target="_blank"
+          rel="noopener"
+          >linkedin.com/in/hrishikesh-kulat-28b559373</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a
+          href="https://github.com/hrishikeshkulat-cmd"
+          target="_blank"
+          rel="noopener"
+          >github.com/hrishikeshkulat-cmd</a
+        >
+      </p>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Hrishikesh Kulat</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Hrishikesh Kulat</p>
+  </footer>
 
-    <script src="script.js"></script> <!-- Link to external JS -->
+  <!-- Script -->
+  <script src="script.js" defer></script>
 </body>
 </html>
 
