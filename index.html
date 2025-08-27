@@ -63,7 +63,22 @@
     .hero-inner{max-width:1100px; width:100%; display:grid; grid-template-columns: 360px 1fr; gap:2.5rem; align-items:center}
 
     /* Profile circle (preserves your image and content exactly) */
-    .profile-pic{width:320px; height:320px; border-radius:20px; overflow:hidden; box-shadow:0 30px 60px rgba(2,6,23,0.25); border:6px solid rgba(255,255,255,0.06); background-size:cover; background-position:center; background-image:url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg'); transform:translateZ(0);}
+  /* Replace your existing .profile-pic rule with this (only changed background-position + added no-repeat) */
+.profile-pic{
+  width:320px;
+  height:320px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(2,6,23,0.25);
+  border:6px solid rgba(255,255,255,0.06);
+  background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* shifted vertically so the top of your head is visible — adjust the 20% value to fine-tune */
+  background-position: 50% 20%;
+  transform:translateZ(0);
+}
+
 
     /* cinematic text column */
     .hero-copy h1{font-size: clamp(2rem, 4.5vw, 3.6rem); margin:0; line-height:1; font-weight:900; letter-spacing:-0.01em; background:linear-gradient(90deg,#fff, rgba(255,255,255,0.95)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
