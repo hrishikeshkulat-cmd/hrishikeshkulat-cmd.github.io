@@ -1,1444 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hrishikesh Kulat - Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hrishikesh Kulat — Data Analyst (Enhanced)</title>
+  <meta name="description" content="Hrishikesh Kulat — Fresher Data Analyst. SQL, Power BI, Python (Pandas, NumPy), Tableau, Azure. Projects: Retail Sales Dashboard, Pizza Sales Analysis. BCA (SPPU) 2025." />
+  <meta property="og:title" content="Hrishikesh Kulat — Data Analyst" />
+  <meta property="og:description" content="Fresher Data Analyst — SQL, Power BI, Python (Pandas, NumPy), Tableau, Azure. Projects & case studies available on GitHub." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="icon" href="https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/retail-dashboard.jpg" />
+  <meta property="og:image:alt" content="Retail Sales Dashboard preview" />
+
+  <!-- Fonts & icons (deferred where possible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"></noscript>
+
+  <!-- Structured data for person (helps SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hrishikesh Kulat",
+    "jobTitle": "Data Analyst",
+    "url": "https://hrishikeshkulat-cmd.github.io/",
+    "sameAs": [
+      "https://github.com/hrishikeshkulat-cmd",
+      "https://www.linkedin.com/in/hrishikesh-kulat-28b559373"
+    ],
+    "knowsAbout": "SQL, Power BI, Python, Azure, Tableau, MongoDB, ETL"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#fff; --muted:#6b7280; --text:#0f172a; --primary:#6366f1; --accent:#06b6d4; --card:#ffffff; --glass: rgba(255,255,255,0.6);
+    }
+    [data-theme='dark']{ --bg:#0b1220; --muted:#9aa4b2; --text:#e6eef8; --primary:#8b5cf6; --card:#071021; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:var(--text);background:linear-gradient(180deg,#f8fafc,var(--bg));-webkit-font-smoothing:antialiased}
+    a{color:var(--primary)}
+
+    /* Header */
+    header{position:fixed;inset:0 0 auto 0;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,0.04);z-index:1200}
+    [data-theme='dark'] header{background:rgba(10,14,20,0.6)}
+    .nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem}
+    .logo{font-weight:800;font-size:1.05rem;background:linear-gradient(90deg,var(--primary),#8b5cf6);-webkit-background-clip:text;color:transparent}
+    nav{display:flex;gap:1rem;align-items:center}
+    nav a{font-weight:600;text-decoration:none;color:var(--text);padding:.4rem .6rem;border-radius:8px}
+    nav a:focus, nav a:hover{background:var(--glass)}
+    .mobile-btn{display:none;padding:.35rem;border-radius:8px;cursor:pointer}
+
+    /* Hero */
+    main{padding-top:72px}
+    .hero{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:3.5rem 1rem;background:linear-gradient(135deg,#667eea,#764ba2);color:white;position:relative;overflow:hidden}
+    .hero-inner{max-width:980px;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.12);margin:0 auto 1rem;background:#eee}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:2.25rem;margin:.25rem 0 0}
+    .subtitle{font-size:1.05rem;opacity:.95}
+    .hero p.lead{max-width:760px;margin:1rem auto;color:rgba(255,255,255,0.92);line-height:1.6}
+    .cta{margin-top:1.25rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+    .btn{padding:.8rem 1.1rem;border-radius:999px;border:none;font-weight:700;background:rgba(255,255,255,0.14);color:white;text-decoration:none}
+
+    /* Container & sections */
+    .container{max-width:1200px;margin:0 auto;padding:2.25rem 1rem}
+    .section-title{font-size:1.5rem;font-weight:800;margin-bottom:.35rem}
+    .subtitle-muted{color:var(--muted);margin-bottom:1rem}
+
+    /* Grid utilities */
+    .grid{display:grid;gap:1rem}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.cols-3{grid-template-columns:repeat(2,1fr)}.cols-2{grid-template-columns:1fr}}
+    @media (max-width:560px){.cols-3{grid-template-columns:1fr}}
+
+    /* Cards */
+    .card{background:var(--card);border-radius:12px;padding:1rem;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+    .chip{display:inline-block;padding:.35rem .6rem;border-radius:999px;background:#f3f4f6;font-weight:700;font-size:.85rem}
+
+    /* Skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+    .project{display:flex;flex-direction:column;border-radius:12px;overflow:hidden}
+    .project img{width:100%;height:180px;object-fit:cover}
+    .project-body{padding:1rem;background:var(--card)}
+    .project .view{display:inline-block;padding:.5rem .75rem;border-radius:999px;background:linear-gradient(90deg,var(--primary),#8b5cf6);color:white;text-decoration:none;font-weight:700}
+
+    /* About & stats */
+    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:start}
+    @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem}
+    .stat{text-align:center;padding:1rem;border-radius:10px;background:var(--card)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
 
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-            --accent-color: #06b6d4;
-            --success-color: #10b981;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-light: #9ca3af;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-dark: #0f172a;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #6366f1, #8b5cf6);
-            --gradient-3: linear-gradient(135deg, #06b6d4, #10b981);
-            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
+    /* Modal */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);padding:1rem;visibility:hidden;opacity:0;transition:opacity .18s ease}
+    .modal.open{visibility:visible;opacity:1}
+    .modal-card{background:var(--card);border-radius:12px;max-width:900px;width:100%;max-height:85vh;overflow:auto;padding:1.25rem}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            overflow-x: hidden;
-        }
+    /* Footer */
+    footer{padding:1.25rem;background:var(--card);text-align:center;border-top:1px solid rgba(0,0,0,0.03)}
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+    /* Focus & reduced motion */
+    :focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:3px}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+    /* Dark toggle button */
+    .theme-toggle{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:.4rem .6rem;border-radius:8px;cursor:pointer}
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient-2);
-            border-radius: 4px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        nav.scrolled {
-            box-shadow: var(--shadow);
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.025em;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: var(--gradient-2);
-            transition: all 0.3s ease;
-            border-radius: 2px;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Mobile menu */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-primary);
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-1);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            color: white;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 6px solid rgba(255, 255, 255, 0.2);
-            margin: 0 auto 2rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            box-shadow: var(--shadow-lg);
-            animation: pulse 2s infinite;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4);
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #fff, #f0f9ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.1;
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .hero .description {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        /* Floating elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .floating-element {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            width: 120px;
-            height: 120px;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            width: 60px;
-            height: 60px;
-            animation-delay: 4s;
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-2);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .skill-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .skill-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .skill-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-image {
-            height: 250px;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .project-image.retail-dashboard {
-            background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/retail-dashboard.jpg');
-        }
-
-        .project-image.pizza-analysis {
-            background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/pizza-dashboard.jpg');
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.8));
-        }
-
-        .project-image i {
-            position: relative;
-            z-index: 2;
-        }
-
-        .project-content {
-            padding: 2.5rem;
-        }
-
-        .project-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .tag {
-            padding: 0.5rem 1rem;
-            background: var(--bg-secondary);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            padding: 0.75rem 1.5rem;
-            background: var(--gradient-2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-        }
-
-        .project-link.secondary {
-            background: white;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .project-link.secondary:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 0;
-            background: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            background: var(--bg-secondary);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-            background: white;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .contact-details h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .contact-details p {
-            color: var(--text-secondary);
-        }
-
-        .contact-details a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .contact-details a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-form {
-            background: var(--bg-secondary);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid rgba(99, 102, 241, 0.1);
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--gradient-2);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-dark);
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .profile-pic {
-                width: 150px;
-                height: 150px;
-                font-size: 3rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card {
-                min-width: unset;
-            }
-        }
-
-        /* Scroll reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Loading animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 6px solid var(--bg-secondary);
-            border-top: 6px solid var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="loader"></div>
+  <header>
+    <div class="nav-wrap">
+      <div class="logo">HK — Hrishikesh Kulat</div>
+      <nav aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/hrishikeshkulat-cmd" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <div class="mobile-btn" id="mobileBtn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false"><i class="fa fa-bars"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <div class="avatar" aria-hidden="true">
+          <img src="https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg" alt="Profile photo of Hrishikesh Kulat" loading="lazy">
+        </div>
+        <h1 id="hero-heading">Hrishikesh Kulat</h1>
+        <p class="subtitle">Data Analyst — Fresher • BCA (SPPU) 2025</p>
+        <p class="lead">I turn messy data into clear insights. I focus on SQL, Power BI, Python (Pandas & NumPy), and building simple ETL pipelines. I enjoy learning data engineering and deploying analytics on cloud platforms like Azure.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Get in Touch</a>
+          <a class="btn" href="https://github.com/hrishikeshkulat-cmd" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="container" id="skills">
+  <h2 class="section-title">Skills & Tools</h2>
+  <p class="subtitle-muted">Core technical skills, BI tools, databases, and workflows I use to deliver projects.</p>
+
+  <div class="skills-grid">
+    <div class="card">
+      <h4>Programming & Data</h4>
+      <div style="margin-top:.6rem">
+        <span class="chip">Python</span>
+        <span class="chip">NumPy</span>
+        <span class="chip">Pandas</span>
+        <span class="chip">Matplotlib</span>
+        <span class="chip">Seaborn</span>
+        <span class="chip">SQL</span>
+      </div>
+      <p style="color:var(--muted);margin-top:.6rem">
+        Data wrangling, cleaning, EDA, visualizations, and writing SQL queries for analysis.
+      </p>
     </div>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">HK</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <div class="card">
+      <h4>BI & Visualization</h4>
+      <div style="margin-top:.6rem">
+        <span class="chip">Power BI</span>
+        <span class="chip">Tableau</span>
+        <span class="chip">Excel</span>
+        <span class="chip">DAX</span>
+      </div>
+      <p style="color:var(--muted);margin-top:.6rem">
+        Building dashboards, creating KPIs, and data storytelling for business insights.
+      </p>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="hero-content">
-            <div class="profile-pic">
-                <!-- Your profile picture will load from: profile-pic.jpg -->
-                <i class="fas fa-user" style="display: none;"></i>
+    <div class="card">
+      <h4>Databases & Cloud</h4>
+      <div style="margin-top:.6rem">
+        <span class="chip">MySQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">Azure (Basics)</span>
+      </div>
+      <p style="color:var(--muted);margin-top:.6rem">
+        Knowledge of relational databases, queries, and basics of cloud platforms.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Workflow & Tools</h4>
+      <div style="margin-top:.6rem">
+        <span class="chip">GitHub</span>
+        <span class="chip">Jupyter Notebook</span>
+        <span class="chip">VS Code</span>
+        <span class="chip">Tableau Prep</span>
+      </div>
+      <p style="color:var(--muted);margin-top:.6rem">
+        Version control, ETL prototyping, and reproducible analysis workflows.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section class="container" id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="subtitle-muted">End-to-end projects with problem → approach → results. Case studies link to your GitHub resources.</p>
+
+      <div class="projects-grid">
+        <!-- Retail Sales Dashboard -->
+        <article class="project card" aria-labelledby="p1">
+          <img src="https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/retail-dashboard.jpg" alt="Retail dashboard" loading="lazy">
+          <div class="project-body">
+            <h3 id="p1">Retail Sales Dashboard</h3>
+            <p style="color:var(--muted)">Power BI dashboard consolidating sales, returns and inventory with KPI monitoring.</p>
+            <div style="margin-top:.6rem">
+              <span class="chip">Power BI</span> <span class="chip">SQL</span> <span class="chip">Excel</span>
             </div>
-            <h1>Hrishikesh Kulat</h1>
-            <p class="subtitle">Data Analyst</p>
-            <p class="description">
-                Passionate Data Analyst specializing in SQL, Power BI, Python, and Excel. 
-                I transform raw data into actionable insights that drive business decisions 
-                and create compelling visualizations that tell meaningful stories.
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-chart-bar"></i>
-                    View Projects
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i>
-                    Get In Touch
-                </a>
+            <div style="margin-top:.7rem;display:flex;gap:.5rem">
+              <a class="view" href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/blob/main/SALES%20DATA%20ANALYSIS%20BUSINESS%20REQUIREMENT.pptx" target="_blank" rel="noopener noreferrer">Business Req (PPTX)</a>
+              <button class="view" onclick="openModal('modal-retail')">Case study</button>
             </div>
-        </div>
+          </div>
+        </article>
+
+        <!-- Pizza Sales Analysis -->
+        <article class="project card" aria-labelledby="p2">
+          <img src="https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/pizza-dashboard.jpg" alt="Pizza dashboard" loading="lazy">
+          <div class="project-body">
+            <h3 id="p2">Pizza Sales Analysis</h3>
+            <p style="color:var(--muted)">Sales & customer analysis for a fictional pizza chain using MySQL & Power BI.</p>
+            <div style="margin-top:.6rem">
+              <span class="chip">Power BI</span> <span class="chip">MySQL</span> <span class="chip">SQL</span>
+            </div>
+            <div style="margin-top:.7rem">
+              <a class="view" href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" target="_blank" rel="noopener noreferrer">View Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder for future project - preserves old site core -->
+        <article class="project card" aria-labelledby="p3">
+          <div style="height:180px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f3f4f6,#fff);color:var(--muted)">More projects coming</div>
+          <div class="project-body">
+            <h3 id="p3">Other Work & Experiments</h3>
+            <p style="color:var(--muted)">Additional notebooks, ETL prototypes and small dashboards are on my GitHub — I keep the repo updated with sample datasets and scripts.</p>
+            <a class="view" href="https://github.com/hrishikeshkulat-cmd" target="_blank" rel="noopener noreferrer">Open GitHub</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills reveal" id="skills">
-        <div class="container">
-            <h2 class="section-title">My Expertise</h2>
-            <p class="section-subtitle">
-                Specialized in turning complex data into clear, actionable insights using industry-leading tools and technologies
-            </p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="skill-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="SQL" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    </div>
-                    <h3>SQL</h3>
-                    <p>Advanced SQL querying, data manipulation, joins, subqueries, and database optimization for complex data analysis and reporting.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon power-bi-icon">
-                        <svg viewBox="0 0 24 24" style="width: 60px; height: 60px; fill: #F2C811; margin-bottom: 1rem;">
-                            <path d="M14.25 2.1v19.8h-2.5V2.1h2.5zM9.75 7.35V21.9h-2.5V7.35h2.5zM19.5 7.05v14.85H17V7.05h2.5zM4.5 12.6v9.3H2v-9.3h2.5z"/>
-                        </svg>
-                    </div>
-                    <h3>Power BI</h3>
-                    <p>Creating interactive dashboards, DAX measures, data modeling, and business intelligence solutions for data-driven decision making.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <div class="skill-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    </div>
-                    <h3>Python</h3>
-                    <p>Data analysis using Pandas, NumPy, Matplotlib, and Seaborn for statistical analysis, data cleaning, and visualization.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon excel-icon">
-                        <svg viewBox="0 0 24 24" style="width: 60px; height: 60px; fill: #107C41; margin-bottom: 1rem;">
-                            <path d="M19.5 2.4c.8 0 1.5.7 1.5 1.5v16.2c0 .8-.7 1.5-1.5 1.5H4.5c-.8 0-1.5-.7-1.5-1.5V3.9c0-.8.7-1.5 1.5-1.5h15zM8.3 7.2L6.6 10.5l1.7 3.3h1.8l-2.1-3.3 2.1-3.3H8.3zm4.2 0v6.6h1.5v-2.7h2.1c1.2 0 2.1-.9 2.1-2.1s-.9-2.1-2.1-2.1h-3.6zm1.5 1.2h2.1c.5 0 .9.4.9.9s-.4.9-.9.9h-2.1V8.4z"/>
-                        </svg>
-                    </div>
-                    <h3>Excel</h3>
-                    <p>Advanced Excel functions, pivot tables, VBA automation, and complex data analysis for business reporting and insights.</p>
-                </div>
-            </div>
+    <!-- ABOUT -->
+    <section class="container" id="about">
+      <h2 class="section-title">About & Education</h2>
+      <div class="about-grid">
+        <div>
+          <p class="subtitle-muted">I'm a fresher graduating with a BCA (Savitribai Phule Pune University) in 2025. I specialize in SQL, Power BI, Python and enjoy building ETL pipelines and exploring data engineering.</p>
+          <p style="color:var(--muted)">My work focuses on: data cleaning, modeling, DAX measures, and creating dashboards that stakeholders can action on. I also prototype ETL flows and experiment with small data ingestion tools and NoSQL for certain tasks.</p>
+
+          <h4 style="margin-top:1rem">Certifications</h4>
+          <ul style="color:var(--muted)">
+            <li>Udemy — Data Analytics Certificate</li>
+            <li>HackerRank — SQL Certificate</li>
+          </ul>
+
+          <h4 style="margin-top:1rem">Personal Brand</h4>
+          <p style="color:var(--muted)">Beyond analytics — I love simplifying ETL, understanding data engineering, and making analytics production-ready. I strive to bridge analysis with engineering to deliver reliable, automated reports.</p>
         </div>
+
+        <aside>
+          <div class="stats">
+            <div class="stat"><div style="font-weight:800;font-size:1.1rem">Fresher</div><div style="color:var(--muted)">Open to Jr. Data Analyst roles</div></div>
+            <div class="stat"><div style="font-weight:800;font-size:1.1rem">BCA '25</div><div style="color:var(--muted)">Savitribai Phule Pune University</div></div>
+            <div class="stat"><div style="font-weight:800;font-size:1.1rem">MongoDB</div><div style="color:var(--muted)">Prototype & learning</div></div>
+            <div class="stat"><div style="font-weight:800;font-size:1.1rem">ETL</div><div style="color:var(--muted)">Design & automation focus</div></div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects reveal" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">
-                Discover my latest data analysis projects showcasing end-to-end solutions from data collection to actionable insights
-            </p>
-            <div class="projects-grid">
-                <!-- Project 1: Retail Sales Dashboard -->
-                <div class="project-card">
-                    <div class="project-image retail-dashboard">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MyCompany Retail Sales Dashboard</h3>
-                        <p class="project-description">
-                            Comprehensive retail sales analysis dashboard demonstrating end-to-end Power BI development. 
-                            Features interactive visualizations, KPI monitoring, time-period comparisons, and geographic 
-                            sales distribution with advanced DAX measures for profitability analysis.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Excel</span>
-                            <span class="tag">DAX</span>
-                            <span class="tag">Power Query</span>
-                            <span class="tag">Business Intelligence</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- CONTACT -->
+    <section class="container" id="contact">
+      <h2 class="section-title">Contact & Resume</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="subtitle-muted">Prefer GitHub or email — I reply quickly. Resume is available to download.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem">
+            <a class="chip" href="mailto:hrishikeshkulat@gmail.com">Email</a>
+            <a class="chip" href="https://wa.me/919834678227" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="chip" href="https://github.com/hrishikeshkulat-cmd" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="chip" href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
 
-                <!-- Project 2: Pizza Sales Analysis -->
-                <div class="project-card">
-                    <div class="project-image pizza-analysis">
-                        <i class="fas fa-pizza-slice"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pizza Sales Analysis Dashboard</h3>
-                        <p class="project-description">
-                            Complete sales analysis of a fictional pizza chain using Power BI and MySQL. 
-                            Derives actionable insights including revenue trends, customer behavior analysis, 
-                            and pizza category performance with comprehensive KPI monitoring and trend analysis.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">KPI Analysis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <a class="view" href="https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/files/Hrishikesh_Kulat_Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume (PDF)</a>
+            <a class="view" href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank" rel="noopener noreferrer">Project Repo</a>
+          </div>
         </div>
+
+        <form id="contactForm" aria-label="Contact form">
+          <div style="margin-bottom:.75rem"><label for="name">Name</label><input id="name" name="name" required></div>
+          <div style="margin-bottom:.75rem"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+          <div style="margin-bottom:.75rem"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          <div style="display:flex;gap:.5rem;align-items:center">
+            <button class="view" type="submit">Send Message</button>
+            <button type="button" class="view" onclick="openFormspreeSetup()">Wire Form (Formspree)</button>
+          </div>
+          <p style="margin-top:.5rem;color:var(--muted);font-size:.9rem">Current demo uses mailto fallback. Click "Wire Form (Formspree)" to auto-add Code snippet to use Formspree for real submissions.</p>
+        </form>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about reveal" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm Hrishikesh Kulat, a passionate Data Analyst with expertise in transforming raw data 
-                        into meaningful insights that drive business decisions. My journey in data analysis combines 
-                        technical proficiency with business acumen to deliver comprehensive solutions.
-                    </p>
-                    <p>
-                        With strong skills in SQL, Power BI, Python, and Excel, I specialize in creating 
-                        interactive dashboards, performing complex data analysis, and building automated 
-                        reporting solutions. I'm passionate about uncovering patterns in data and presenting 
-                        them in visually compelling and actionable formats.
-                    </p>
-                    <p>
-                        My approach focuses on understanding business requirements, ensuring data quality, 
-                        and delivering insights that directly impact strategic decision-making processes.
-                    </p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Core Technologies</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Learning Mindset</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  </main>
 
-    <!-- Contact Section -->
-    <section class="contact reveal" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">
-                Ready to collaborate or discuss data analysis opportunities? Let's connect and explore how we can work together
-            </p>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p><a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p><a href="tel:+919834678227">+91 98346 78227</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon" style="background: linear-gradient(45deg, #0077B5, #00A0DC);">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <p><a href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">Connect with me</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon" style="background: linear-gradient(45deg, #333, #24292e);">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <p><a href="https://github.com/hrishikeshkulat-cmd" target="_blank">View my repositories</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon" style="background: linear-gradient(45deg, #25D366, #128C7E);">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/919834678227" target="_blank">Message me</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon" style="background: linear-gradient(45deg, #FF6B6B, #4ECDC4);">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Nagpur, Maharashtra, India</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <div style="max-width:1200px;margin:0 auto;padding:1rem;text-align:center">&copy; 2025 Hrishikesh Kulat • Nagpur, Maharashtra • Transforming data into insights</div>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/hrishikeshkulat-cmd" class="social-link" target="_blank" style="background: linear-gradient(45deg, #333, #24292e);">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/hrishikesh-kulat-28b559373" class="social-link" target="_blank" style="background: linear-gradient(45deg, #0077B5, #00A0DC);">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:hrishikeshkulat@gmail.com" class="social-link" style="background: linear-gradient(45deg, #EA4335, #FBBC04);">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+919834678227" class="social-link" style="background: linear-gradient(45deg, #25D366, #128C7E);">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="https://wa.me/919834678227" class="social-link" target="_blank" style="background: linear-gradient(45deg, #25D366, #128C7E);">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            <p>&copy; 2025 Hrishikesh Kulat. All rights reserved.</p>
-            <p>Transforming Data into Insights</p>
-        </div>
-    </footer>
+  <!-- Modal: Retail Case Study -->
+  <div class="modal" id="modal-retail" role="dialog" aria-modal="true" aria-labelledby="retail-title">
+    <div class="modal-card">
+      <button onclick="closeModal('modal-retail')" aria-label="Close" style="float:right;background:none;border:none;font-size:1rem;cursor:pointer">Close ✕</button>
+      <h3 id="retail-title">Retail Sales Dashboard — Case Study</h3>
+      <p style="color:var(--muted)"><strong>Problem:</strong> Fragmented sales files and inconsistent KPIs. Stakeholders needed a daily-ready dashboard.</p>
+      <p style="color:var(--muted)"><strong>Approach:</strong> Consolidated sales, returns and inventory using SQL; built a star schema for Power BI; created DAX measures for YoY growth and margin; added slicers for time, region and category.</p>
+      <p style="color:var(--muted)"><strong>Synthesized Results:</strong></p>
+      <ul style="color:var(--muted)">
+        <li>Reduced manual reporting time from ~3 hours to <strong>~10 minutes</strong> via automated refresh.</li>
+        <li>Identified top 10% SKUs driving <strong>~45% revenue</strong>.</li>
+        <li>Found a ~7% uplift opportunity in promotional mix.</li>
+      </ul>
+      <p style="color:var(--muted)"><strong>Role:</strong> Data cleaning (SQL & Excel), data model & DAX (Power BI), visualization & storytelling.</p>
+      <p style="color:var(--muted)">Source files & business requirement are in the project repo. You can download the Power BI file and raw dataset directly:
+        <ul style=\"color:var(--muted)\">
+          <li><a href=\"https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/MyCompany_SalesDashboard.pbix\" target=\"_blank\" rel=\"noopener noreferrer\">Download Power BI (.pbix)</a></li>
+          <li><a href=\"https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/Store+Data.xlsx\" target=\"_blank\" rel=\"noopener noreferrer\">Raw dataset (Store+Data.xlsx)</a></li>
+        </ul>
+        Numbers above are synthesized analytics to illustrate likely outcomes; replace them with production metrics when available.</p>
+    </div>
+  </div>
 
-    <script>
-        // Loading screen
-        window.addEventListener('load', function() {
-            const loading = document.getElementById('loading');
-            loading.style.opacity = '0';
-            setTimeout(() => {
-                loading.style.display = 'none';
-            }, 500);
-        });
+  <script>
+    // Theme toggle with persistence
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(theme){ document.documentElement.setAttribute('data-theme', theme); localStorage.setItem('site-theme', theme); toggle.textContent = theme==='dark' ? '☀️' : '🌙'; }
+    (function(){ const saved = localStorage.getItem('site-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); applyTheme(saved); })();
+    toggle.addEventListener('click', ()=>{ const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; applyTheme(cur); });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobileBtn');
+    const nav = document.querySelector('nav');
+    mobileBtn.addEventListener('click', toggleMobile);
+    mobileBtn.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' ') toggleMobile(); });
+    function toggleMobile(){ const isOpen = nav.style.display === 'flex'; nav.style.display = isOpen ? '' : 'flex'; mobileBtn.setAttribute('aria-expanded', String(!isOpen)); }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    // Modal handling
+    function openModal(id){ document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeModal(id){ document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+    window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open')); document.body.style.overflow=''; } });
 
-        // Scroll reveal animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
+    // Contact form — mailto fallback
+    document.getElementById('contactForm').addEventListener('submit', function(e){ e.preventDefault(); const name=this.name.value; const email=this.email.value; const message=this.message.value; const subject=encodeURIComponent('Portfolio contact from '+name); const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message); window.location.href='mailto:hrishikeshkulat@gmail.com?subject='+subject+'&body='+body; });
 
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
+    // Helper: open Formspree setup snippet
+    function openFormspreeSetup(){ alert('To wire Formspree, create a free form at https://formspree.io and copy the provided form endpoint. I can insert the snippet into this file for you. Say "Wire Formspree" and I will update the code.'); }
 
-        window.addEventListener('scroll', reveal);
-        reveal(); // Initial check
+    // Resume download: ensure file exists in repo path
+    function openResume(){ window.open('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/files/Hrishikesh_Kulat_Resume.pdf','_blank'); }
 
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Create mailto link
-            const mailtoLink = `mailto:hrishikeshkulat@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
-            // Open default email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Thank you for your message! Your default email client should open now.');
-            
-            // Reset form
-            this.reset();
-        });
+    // Lightweight parallax (requestAnimationFrame)
+    let lastScroll=0; function onScroll(){ lastScroll=window.scrollY; requestAnimationFrame(()=>{ document.querySelectorAll('.hero .avatar').forEach(el=>el.style.transform='translateY('+ (lastScroll*0.02) +'px)'); }); }
+    window.addEventListener('scroll', onScroll, {passive:true});
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
+    // Accessibility: focus ring only for keyboard users
+    (function(){ function handleFirstTab(e){ if(e.key==='Tab'){ document.body.classList.add('user-is-tabbing'); window.removeEventListener('keydown', handleFirstTab); } } window.addEventListener('keydown', handleFirstTab); })();
 
-        // Typing effect for hero section
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            type();
-        }
-
-        // Initialize typing effect when page loads
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const subtitle = document.querySelector('.hero .subtitle');
-                if (subtitle) {
-                    typeWriter(subtitle, 'Data Analyst', 150);
-                }
-            }, 1000);
-        });
-
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-element');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-
-        // Add hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-10px) scale(1)';
-            });
-        });
-
-        // Add click ripple effect to buttons
-        document.querySelectorAll('.btn, .project-link, .submit-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s ease-out;
-                    pointer-events: none;
-                `;
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
-
-        // Add CSS for ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Skills counter animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            counters.forEach(counter => {
-                const target = counter.textContent;
-                if (target === '∞') return; // Skip infinity symbol
-                
-                const targetNumber = parseInt(target.replace(/[^0-9]/g, ''));
-                let current = 0;
-                const increment = targetNumber / 50;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= targetNumber) {
-                        counter.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        counter.textContent = Math.floor(current) + (target.includes('+') ? '+' : '') + (target.includes('%') ? '%' : '');
-                    }
-                }, 50);
-            });
-        }
-
-        // Trigger counter animation when about section is in view
-        const aboutSection = document.querySelector('.about');
-        if (aboutSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounters();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-            observer.observe(aboutSection);
-        }
-    </script>
+  </script>
 </body>
 </html>
+
