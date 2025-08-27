@@ -793,255 +793,6 @@
             }
         }
 
-        /* Skill Progress Bars */
-        .skill-progress {
-            width: 100%;
-            height: 8px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 10px;
-            margin-top: 1rem;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--gradient-2);
-            border-radius: 10px;
-            transition: width 2s ease-in-out;
-            position: relative;
-        }
-
-        .progress-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        .skill-percentage {
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-
-        /* Learning & Tools Section */
-        .learning-section {
-            margin-top: 4rem;
-            padding: 3rem 0;
-            background: white;
-        }
-
-        .learning-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .tool-category {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .tool-category:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .tool-category h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tool-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tool-tag {
-            padding: 0.4rem 0.8rem;
-            background: white;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .tool-tag:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .learning-tag {
-            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
-            color: #2d3436;
-            animation: pulse 2s infinite;
-        }
-
-        /* Education & Certifications */
-        .education {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .education-card, .cert-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .education-card::before, .cert-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-2);
-        }
-
-        .education-card:hover, .cert-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .education-icon, .cert-icon {
-            font-size: 2.5rem;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .education-title, .cert-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .education-details, .cert-details {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .cert-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--gradient-3);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-top: 1rem;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .profile-pic {
-                width: 150px;
-                height: 150px;
-                font-size: 3rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card {
-                min-width: unset;
-            }
-        }
-
         /* Scroll reveal animation */
         .reveal {
             opacity: 0;
@@ -1118,10 +869,10 @@
         <div class="hero-content">
             <div class="profile-pic">
                 </div>
-            <h1 class="reveal">Hrishikesh Kulat</h1>
-            <p class="subtitle reveal">Data Analyst & Data Visualization Enthusiast</p>
-            <p class="description reveal">I transform complex datasets into actionable insights, helping organizations make data-driven decisions. My expertise spans data cleaning, statistical analysis, and creating compelling visualizations with tools like Power BI and SQL.</p>
-            <div class="cta-buttons reveal">
+            <h1>Hrishikesh Kulat</h1>
+            <p class="subtitle">Data Analyst & Data Visualization Enthusiast</p>
+            <p class="description">I transform complex datasets into actionable insights, helping organizations make data-driven decisions. My expertise spans data cleaning, statistical analysis, and creating compelling visualizations with tools like Power BI and SQL.</p>
+            <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary"><i class="fas fa-chart-bar"></i> View Projects</a>
                 <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get in Touch</a>
             </div>
@@ -1130,65 +881,28 @@
 
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title reveal">My Skills</h2>
-            <p class="section-subtitle reveal">I am proficient in a variety of tools and technologies essential for a modern data professional.</p>
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">I am proficient in a variety of tools and technologies essential for a modern data professional.</p>
             <div class="skills-grid">
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-database"></i></div>
                     <h3>SQL</h3>
                     <p>Expertise in querying, managing, and manipulating relational databases to extract meaningful data.</p>
-                    <div class="skill-progress">
-                        <div class="progress-fill" style="width: 90%;"></div>
-                    </div>
-                    <div class="skill-percentage">90%</div>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Power BI</h3>
                     <p>Creating interactive and dynamic dashboards and reports for business intelligence and data visualization.</p>
-                    <div class="skill-progress">
-                        <div class="progress-fill" style="width: 85%;"></div>
-                    </div>
-                    <div class="skill-percentage">85%</div>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Python</h3>
                     <p>Utilizing libraries like Pandas, NumPy, and Matplotlib for data cleaning, analysis, and automation.</p>
-                    <div class="skill-progress">
-                        <div class="progress-fill" style="width: 80%;"></div>
-                    </div>
-                    <div class="skill-percentage">80%</div>
                 </div>
-                <div class="skill-card reveal">
+                <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
                     <h3>Excel</h3>
                     <p>Advanced knowledge in functions, pivot tables, and data modeling for in-depth data analysis.</p>
-                    <div class="skill-progress">
-                        <div class="progress-fill" style="width: 95%;"></div>
-                    </div>
-                    <div class="skill-percentage">95%</div>
-                </div>
-            </div>
-            <div class="learning-section reveal">
-                <h3 class="learning-title">Learning & Tools</h3>
-                <div class="tools-grid">
-                    <div class="tool-category">
-                        <h4><i class="fas fa-bolt"></i> Learning Now</h4>
-                        <div class="tool-list">
-                            <span class="tool-tag learning-tag">Microsoft Azure</span>
-                            <span class="tool-tag learning-tag">Spark</span>
-                        </div>
-                    </div>
-                    <div class="tool-category">
-                        <h4><i class="fas fa-wrench"></i> Other Tools</h4>
-                        <div class="tool-list">
-                            <span class="tool-tag">GitHub</span>
-                            <span class="tool-tag">Jupyter</span>
-                            <span class="tool-tag">VS Code</span>
-                            <span class="tool-tag">Tableau</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1196,10 +910,10 @@
 
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title reveal">Recent Projects</h2>
-            <p class="section-subtitle reveal">Showcasing my ability to solve real-world problems using data analysis and visualization.</p>
+            <h2 class="section-title">Recent Projects</h2>
+            <p class="section-subtitle">Showcasing my ability to solve real-world problems using data analysis and visualization.</p>
             <div class="projects-grid">
-                <div class="project-card reveal">
+                <div class="project-card">
                     <div class="project-image retail-dashboard"></div>
                     <div class="project-content">
                         <h3 class="project-title">Retail Data Dashboard</h3>
@@ -1215,7 +929,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card reveal">
+                <div class="project-card">
                     <div class="project-image pizza-analysis"></div>
                     <div class="project-content">
                         <h3 class="project-title">Pizza Sales Analysis</h3>
@@ -1235,34 +949,11 @@
         </div>
     </section>
 
-    <section class="education" id="education">
-        <div class="container">
-            <h2 class="section-title reveal">Education & Certifications</h2>
-            <p class="section-subtitle reveal">A summary of my academic background and professional qualifications.</p>
-            <div class="education-grid">
-                <div class="education-card reveal">
-                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 class="education-title">Bachelor of Engineering in Computer Science</h3>
-                    <p class="education-details">Smt. Kashibai Navale College of Engineering | 2020 - 2024</p>
-                    <p class="education-details">Pune, India</p>
-                </div>
-                <div class="cert-card reveal">
-                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <h3 class="cert-title">Certified Data Analyst</h3>
-                    <p class="cert-details">Data Analysis and Visualization Professional Certificate | IBM</p>
-                    <a href="https://www.coursera.org/verify/professional-cert/Q5C2H5U38L7Z" target="_blank" class="cert-badge">
-                        View Certificate <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title reveal">About Me</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="about-stats reveal">
+                <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-number">4+</span>
                         <span class="stat-label">Years of Experience</span>
@@ -1272,7 +963,7 @@
                         <span class="stat-label">Projects Completed</span>
                     </div>
                 </div>
-                <div class="about-text reveal">
+                <div class="about-text">
                     <p>Hello! I'm Hrishikesh, a passionate Data Analyst with a strong background in computer science. My journey in data began with a curiosity for how numbers can tell stories and reveal hidden patterns. I specialize in the full data lifecycle, from data wrangling and cleaning to creating insightful visualizations and reports that empower decision-makers.</p>
                     <p>I thrive on challenges and am always eager to learn new technologies and techniques. Whether it's optimizing a SQL query or building a complex dashboard in Power BI, my goal is always to deliver clear, accurate, and impactful results.</p>
                 </div>
@@ -1282,10 +973,10 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title reveal">Get in Touch</h2>
-            <p class="section-subtitle reveal">I'm always open to discussing new projects, collaboration opportunities, and full-time positions.</p>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">I'm always open to discussing new projects, collaboration opportunities, and full-time positions.</p>
             <div class="contact-grid">
-                <div class="contact-info reveal">
+                <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-details">
@@ -1301,14 +992,14 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-linkedin"></i></div>
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
                         <div class="contact-details">
                             <h4>LinkedIn</h4>
                             <p><a href="https://linkedin.com/in/hrishikeshkulat-cmd" target="_blank">linkedin.com/in/hrishikeshkulat-cmd</a></p>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form reveal" action="https://formspree.io/f/mqazkqlk" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/mqazkqlk" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
