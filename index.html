@@ -199,6 +199,13 @@
             text-align: center;
             color: white;
         }
+        
+        /* THE FIX for the mobile layout is here */
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 5rem; /* Pushes content down on mobile to clear the fixed navbar */
+            }
+        }
 
         .hero::before {
             content: '';
@@ -1061,6 +1068,8 @@
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
+
+        /* Media Queries */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1155,42 +1164,55 @@
             <div class="floating-element"></div>
         </div>
         <div class="hero-content">
-            <div class="profile-pic">
-                </div>
+            <div class="profile-pic"></div>
             <h1>Hrishikesh Kulat</h1>
-            <p class="subtitle">Data Analyst & Data Visualization Enthusiast</p>
-            <p class="description">I transform complex datasets into actionable insights, helping organizations make data-driven decisions. My expertise spans data cleaning, statistical analysis, and creating compelling visualizations with tools like Power BI and SQL.</p>
+            <p class="subtitle">Data Analyst</p>
+            <p class="description">I am a passionate and results-driven data professional with a solid foundation in data analysis and a keen eye for turning complex datasets into actionable insights. I specialize in using a variety of tools and technologies to clean, process, and visualize data, helping businesses make informed decisions.</p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary"><i class="fas fa-chart-bar"></i> View Projects</a>
-                <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get in Touch</a>
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-chart-bar"></i> My Projects
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
             </div>
         </div>
     </section>
 
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-subtitle">I am proficient in a variety of tools and technologies essential for a modern data professional.</p>
+            <h2 class="section-title reveal">My Skills</h2>
+            <p class="section-subtitle reveal">I am proficient in a variety of tools and technologies for data analysis.</p>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fas fa-database"></i></div>
                     <h3>SQL</h3>
-                    <p>Expertise in querying, managing, and manipulating relational databases to extract meaningful data.</p>
+                    <p>Expertise in SQL for querying, managing, and manipulating databases. I use it for data extraction, transformation, and analysis.</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Power BI</h3>
-                    <p>Creating interactive and dynamic dashboards and reports for business intelligence and data visualization.</p>
+                    <p>Skilled in creating interactive and insightful dashboards and reports with Power BI to visualize complex data.</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Python</h3>
-                    <p>Utilizing libraries like Pandas, NumPy, and Matplotlib for data cleaning, analysis, and automation.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-file-csv"></i></div>
                     <h3>Excel</h3>
-                    <p>Advanced knowledge in functions, pivot tables, and data modeling for in-depth data analysis.</p>
+                    <p>Advanced knowledge of Excel, including pivot tables, VLOOKUP, and macros for data cleaning and reporting.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Python</h3>
+                    <p>Proficient in Python for data manipulation, analysis, and automation using libraries like Pandas and NumPy.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <h3>Tableau</h3>
+                    <p>Experienced in building data visualizations and dashboards with Tableau to uncover key business trends and insights.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud Platforms</h3>
+                    <p>Familiar with cloud services and data warehousing solutions, enabling scalable and efficient data projects.</p>
                 </div>
             </div>
         </div>
@@ -1198,57 +1220,60 @@
 
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title">Recent Projects</h2>
-            <p class="section-subtitle">Showcasing my ability to solve real-world problems using data analysis and visualization.</p>
+            <h2 class="section-title reveal">My Projects</h2>
+            <p class="section-subtitle reveal">Explore a selection of my recent data analysis projects, showcasing my skills and expertise.</p>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image retail-dashboard"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Retail Data Dashboard</h3>
-                        <p class="project-description">Developed a comprehensive Power BI dashboard to analyze sales, profitability, and customer segments for a retail chain. The dashboard provides key insights into market performance and helps identify growth opportunities.</p>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Power Query</span>
-                            <span class="tag">DAX</span>
-                            <span class="tag">Data Modeling</span>
-                            <span class="tag">Statistics</span>
-                            <span class="tag">Excel</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image pizza-analysis"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pizza Sales Analysis</h3>
-                        <p class="project-description">Conducted an in-depth analysis of a pizza chain's sales data using SQL and Excel to optimize menu offerings and staffing. Identified peak sales times and best-selling pizzas to improve business efficiency.</p>
-                        <div class="project-tags">
-                            <span class="tag">SQL</span>
-                            <span class="tag">Excel</span>
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Power Query</span>
-                            <span class="tag">DAX</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="project-image deloitte-forage"></div>
                     <div class="project-content">
                         <h3 class="project-title">Deloitte Virtual Internship</h3>
-                        <p class="project-description">Completed a virtual internship with Deloitte on the Forage platform, where I worked on a data analytics project to provide strategic recommendations to a fictional client. This project involved cleaning and visualizing data to address a business problem.</p>
+                        <p class="project-description">Developed a comprehensive data visualization project for a virtual internship, simulating real-world consulting scenarios. The project involved a deep dive into a sales dataset to identify key trends and provide actionable business recommendations.</p>
                         <div class="project-tags">
-                            <span class="tag">Deloitte</span>
-                            <span class="tag">Forage</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">Data Visualization</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Data Cleaning</span>
+                            <span class="tag">Dashboard Design</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.theforage.com/virtual-internships/modlM2wKk6d3rK4hS/deloitte-careers/data-analytics-virtual-internship" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Forage Link</a>
+                            <a href="https://github.com/hrishikeshkulat-cmd/Deloitte-Virtual-Internship-Forage-" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-image pizza-analysis"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pizza Sales Analysis</h3>
+                        <p class="project-description">Conducted a detailed analysis of pizza sales data to uncover seasonal trends, popular menu items, and peak sales hours. The project utilized SQL for data extraction and cleaning, and Excel for dynamic pivot tables and charts.</p>
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Excel</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Sales Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hrishikeshkulat-cmd/pizza-sales-analysis-using-sql-and-excel" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-image retail-dashboard"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Retail Sales Dashboard</h3>
+                        <p class="project-description">Designed and implemented an interactive retail sales dashboard using Power BI. The dashboard provides a high-level overview of key performance indicators, enabling stakeholders to monitor sales performance and make data-driven decisions.</p>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">KPIs</span>
+                            <span class="tag">Reporting</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hrishikeshkulat-cmd/Retail-Sales-Dashboard-Power-BI-" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1258,23 +1283,23 @@
 
     <section class="education" id="education">
         <div class="container">
-            <h2 class="section-title">Education & Certifications</h2>
-            <p class="section-subtitle">A summary of my academic background and professional qualifications.</p>
+            <h2 class="section-title reveal">Education & Certifications</h2>
+            <p class="section-subtitle reveal">My academic background and verified credentials that support my expertise.</p>
             <div class="education-grid">
-                <div class="education-card">
+                <div class="education-card reveal">
                     <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 class="education-title">Bachelor of Computer Application (BCA)</h3>
-                    <p class="education-details">Savitribai Phule Pune University | 2025</p>
-                    <p class="education-details">Pune, India</p>
+                    <h3 class="education-title">Post Graduate Diploma</h3>
+                    <p class="education-details">Business Analytics</p>
+                    <p class="education-details">2023 - 2024 | Welingkar Institute of Management, Mumbai</p>
                 </div>
-                <div class="cert-card">
+                <div class="cert-card reveal">
                     <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <h3 class="cert-title">Certifications</h3>
-                    <p class="cert-details">
-                        1) Udemy Data Analytics Basics to Advance<br>
-                        2) SQL Advance by Hacker Rank<br>
-                        3) Microsoft LinkedIn Power BI Workshop
-                    </p>
+                    <h3 class="cert-title">Data Analytics Virtual Internship</h3>
+                    <p class="cert-details">Deloitte Australia</p>
+                    <p class="cert-details">Issued Oct 2023</p>
+                    <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Deloitte%20Australia/2cW5e3n5aXnE6J6o8_Deloitte%20Australia_vVqM8RzC56oJqE5bJ_1697200778107_completion_certificate.pdf" target="_blank" class="cert-badge">
+                        <i class="fas fa-external-link-alt"></i> View Certificate
+                    </a>
                 </div>
             </div>
         </div>
@@ -1282,32 +1307,48 @@
 
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">0.6+</span>
-                        <span class="stat-label">Months of Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                </div>
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content reveal">
                 <div class="about-text">
-                    <p>Hello! I'm Hrishikesh, a passionate Data Analyst with a strong background in computer science. My journey in data began with a curiosity for how numbers can tell stories and reveal hidden patterns. I specialize in the full data lifecycle, from data wrangling and cleaning to creating insightful visualizations and reports that empower decision-makers.</p>
-                    <p>I thrive on challenges and am always eager to learn new technologies and techniques. Whether it's optimizing a SQL query or building a complex dashboard in Power BI, my goal is always to deliver clear, accurate, and impactful results.</p>
+                    <p>Hello! I'm Hrishikesh, a dedicated Data Analyst with a passion for transforming raw data into meaningful insights. With a strong foundation in business analytics, I excel at leveraging tools like **SQL**, **Power BI**, and **Excel** to tackle complex problems and drive strategic decisions. I've successfully completed projects ranging from sales trend analysis to designing interactive dashboards.</p>
+                    <p>My journey into data analysis began with a fascination for uncovering hidden stories within numbers. I am a firm believer in the power of data to solve real-world challenges and am always eager to learn new technologies and methodologies. Outside of work, you'm find me exploring new data visualization techniques or contributing to open-source projects.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Skills</span>
+                        </div>
+                    </div>
                 </div>
+                <div>
+                    </div>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-subtitle">I'm always open to discussing new projects, collaboration opportunities, and full-time positions.</p>
+            <h2 class="section-title reveal">Contact Me</h2>
+            <p class="section-subtitle reveal">I'm always open to new opportunities and collaborations. Let's connect!</p>
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 9766935272</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:hrishikeshkulat.cmd@gmail.com">hrishikeshkulat.cmd@gmail.com</a></p>
+                        </div>
+                    </div>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-details">
@@ -1315,36 +1356,24 @@
                             <p>Pune, India</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p><a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <p><a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></p>
-                        </div>
-                    </div>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/mqazkqlk" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
-                </form>
+                <div class="contact-form reveal">
+                    <form action="https://formspree.io/f/mrgwqgyy" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1352,81 +1381,103 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/hrishikeshkulat/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/hrishikeshkulat-cmd" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/hrishikeshkulat" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://twitter.com/HrishikeshKulat" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
             </div>
-            <p>&copy; 2025 Hrishikesh Kulat. All Rights Reserved.</p>
+            <p>&copy; 2024 Hrishikesh Kulat. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Function to toggle the mobile menu
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        // Add scrolled class to navbar on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Hide loading screen after content is loaded
-        window.addEventListener('load', () => {
+        document.addEventListener("DOMContentLoaded", function() {
+            // Loading screen
             const loadingScreen = document.getElementById('loading');
             loadingScreen.style.opacity = '0';
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
             }, 500);
-        });
 
-        // Function for reveal animations
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
+            // Theme toggle functionality
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Set initial theme based on local storage or system preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                body.classList.add('dark-mode');
+            }
+
+            // Update icon on page load
+            updateThemeIcon();
+
+            // Toggle theme on button click
+            themeToggleBtn.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const newTheme = body.classList.contains('dark-mode') ? 'dark-mode' : '';
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon();
+            });
+
+            function updateThemeIcon() {
+                const icon = themeToggleBtn.querySelector('i');
+                if (body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
                 } else {
-                    reveals[i].classList.remove('active');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
                 }
             }
-        }
-        window.addEventListener('scroll', reveal);
-        window.addEventListener('load', reveal);
 
-        // Dark/Light Mode Toggle Functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('i');
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
 
-        // Check for saved theme in localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            // Close mobile menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                localStorage.setItem('theme', 'light');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+
+            // Scroll reveal animation
+            const sections = document.querySelectorAll('section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                const elementsToReveal = section.querySelectorAll('.reveal');
+                elementsToReveal.forEach(el => observer.observe(el));
+            });
+
+            // Sticky navbar on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
         });
     </script>
 </body>
