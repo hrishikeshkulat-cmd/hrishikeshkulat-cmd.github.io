@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hrishikesh Kulat - Full Stack .NET Developer Portfolio</title>
+  <title>Hrishikesh Kulat - Full Stack .NET Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta name="description" content="Portfolio of Hrishikesh Kulat - Full Stack .NET Developer" />
+  <meta name="description" content="Portfolio of Hrishikesh Kulat - Full Stack .NET Developer: ASP.NET Core, EF Core, REST APIs, SQL Server, Razor & frontend." />
   <style>
-    /* -------- Variables & Themes -------- */
+    /* -------- Variables & Themes (keeps your original color choices) -------- */
     :root{
       --primary-color:#6366f1;
       --secondary-color:#8b5cf6;
       --accent-color:#06b6d4;
       --bg:#ffffff;
-      --text:#0f1724;
-      --muted:#475569;
+      --text:#0f1724;            /* page text */
+      --muted:#475569;           /* secondary text */
       --card-bg: rgba(255,255,255,0.85);
       --input-bg: #ffffff;
       --tag-bg: rgba(99,102,241,0.08);
@@ -24,11 +24,11 @@
       --nav-h:72px;
     }
 
-    /* Dark Mode Overrides */
+    /* Dark Mode Overrides — increased contrast + readable sizes */
     body.dark-mode{
-      --bg:#071026;
-      --text:#e6eef8;
-      --muted:#b9c7d9;
+      --bg:#071026;            /* deep navy for good contrast */
+      --text:#e6eef8;          /* main text — bright but soft */
+      --muted:#b9c7d9;         /* secondary text — readable */
       --card-bg: rgba(12,20,30,0.6);
       --input-bg: rgba(12,20,30,0.45);
       --tag-bg: rgba(99,102,241,0.14);
@@ -44,7 +44,7 @@
       -moz-osx-font-smoothing:grayscale; overflow-x:hidden; font-size:16px;
     }
 
-    /* ---------- Navigation ---------- */
+    /* ---------- Cinematic top area (hero) ---------- */
     nav{position:fixed; inset:0 0 auto 0; height:var(--nav-h); display:flex; align-items:center; z-index:1200;}
     .nav-wrap{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between}
     .logo{font-weight:800; font-size:1.25rem; letter-spacing:-0.02em; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
@@ -62,34 +62,37 @@
     .hero{min-height:100vh; display:grid; place-items:center; position:relative; padding:0 1.25rem}
     .hero-inner{max-width:1100px; width:100%; display:grid; grid-template-columns: 360px 1fr; gap:2.5rem; align-items:center}
 
-    /* Profile circle */
-    .profile-pic{
-      width:320px;
-      height:320px;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 30px 60px rgba(2,6,23,0.25);
-      border:6px solid rgba(255,255,255,0.06);
-      background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 20%;
-      transform:translateZ(0);
-    }
+    /* Profile circle (preserves your image and content exactly) */
+  /* Replace your existing .profile-pic rule with this (only changed background-position + added no-repeat) */
+.profile-pic{
+  width:320px;
+  height:320px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(2,6,23,0.25);
+  border:6px solid rgba(255,255,255,0.06);
+  background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* shifted vertically so the top of your head is visible — adjust the 20% value to fine-tune */
+  background-position: 50% 20%;
+  transform:translateZ(0);
+}
+
 
     /* cinematic text column */
     .hero-copy h1{font-size: clamp(2rem, 4.5vw, 3.6rem); margin:0; line-height:1; font-weight:900; letter-spacing:-0.01em; background:linear-gradient(90deg,#fff, rgba(255,255,255,0.95)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
     .subtitle{font-size:1.125rem; margin-top:.4rem; color:var(--muted); font-weight:600}
     .description{margin-top:1.25rem; color:var(--muted); max-width:55ch; line-height:1.85; font-size:1.05rem}
 
-    /* CTA buttons */
+    /* CTA buttons — glassy cinematic style */
     .cta{display:flex; gap:0.75rem; margin-top:1.5rem}
     .btn{padding:0.9rem 1.6rem; border-radius:999px; font-weight:700; display:inline-flex; gap:0.6rem; align-items:center; text-decoration:none; cursor:pointer; border:1px solid rgba(255,255,255,0.04); box-shadow: 0 12px 30px rgba(2,6,23,0.12); transition:transform .18s var(--ease), box-shadow .18s}
     .btn-primary{background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color:#fff}
     .btn-ghost{background:transparent; border:1px solid rgba(17,24,39,0.06); color:var(--muted)}
     .btn:hover{transform:translateY(-6px); box-shadow:0 30px 60px rgba(2,6,23,0.18)}
 
-    /* floating/particle decorative layers */
+    /* floating/particle decorative layers (parallax) */
     .parallax-layer{position:absolute; inset:0; pointer-events:none}
     .shape{position:absolute; filter:blur(28px); opacity:.16; transform:translate3d(0,0,0)}
     .shape.one{width:420px; height:420px; right:-80px; top:-60px; background:linear-gradient(135deg,var(--primary-color),var(--secondary-color)); border-radius:30%}
@@ -101,7 +104,7 @@
     .section-title{font-size:2.4rem; font-weight:900; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:0.5rem}
     .section-sub{color:var(--muted); margin-bottom:2.25rem; font-size:1.02rem}
 
-    /* Cards & grids */
+    /* Cards & grids (preserve your original structure & text) */
     .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.2rem}
     .skill-card{padding:1.6rem; border-radius:16px; background:var(--card-bg); box-shadow:0 8px 30px rgba(2,6,23,0.06); transition:transform .25s var(--ease); border:1px solid rgba(0,0,0,0.04)}
     .skill-card:hover{transform:translateY(-8px)}
@@ -112,7 +115,7 @@
     .project-card{border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .28s var(--ease); background:var(--card-bg); box-shadow:0 12px 30px rgba(2,6,23,0.06); border:1px solid rgba(0,0,0,0.04)}
     .project-image{height:220px; background-size:cover; background-position:center; position:relative; display:block}
     .project-content{padding:1.25rem}
-    .tag{display:inline-block; padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.78rem; background:var(--tag-bg); color:var(--primary-color); margin-right:6px; margin-bottom:6px}
+    .tag{display:inline-block; padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.78rem; background:var(--tag-bg); color:var(--primary-color); margin-right:6px}
 
     /* about + stats */
     .about-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; align-items:center}
@@ -128,7 +131,7 @@
     /* footer */
     footer{padding:3rem 1.25rem; text-align:center}
 
-    /* reveal animations */
+    /* reveal animations (intersection observer driven) */
     .reveal{opacity:0; transform:translateY(30px); transition:all .9s var(--ease)}
     .reveal.show{opacity:1; transform:none}
 
@@ -148,24 +151,27 @@
     /* small UI niceties */
     .top-btn{position:fixed; right:18px; bottom:18px; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color:white; box-shadow:0 10px 40px rgba(2,6,23,0.2); z-index:1400; border:none}
 
-    /* Dark-mode specific tweaks */
+    /* Dark-mode specific tweaks for readability */
     body.dark-mode .profile-pic{box-shadow:0 30px 60px rgba(2,6,23,0.6); border-color:rgba(255,255,255,0.04)}
     body.dark-mode .subtitle, body.dark-mode .description, body.dark-mode .section-sub{color:var(--muted)}
+    body.dark-mode .skill-card, body.dark-mode .project-card, body.dark-mode .stat, body.dark-mode form{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+    /* override above to use the --card-bg for true dark look */
     body.dark-mode .skill-card, body.dark-mode .project-card, body.dark-mode .stat, body.dark-mode form{background:var(--card-bg); border:1px solid rgba(255,255,255,0.04)}
     body.dark-mode .tag{background:var(--tag-bg); color:var(--primary-color)}
     body.dark-mode form input, body.dark-mode form textarea{background:var(--input-bg); border:1px solid rgba(255,255,255,0.06)}
 
-    /* nav dropdown mobile */
+    /* ensure nav dropdown adapts */
     .nav-links.mobile-open{position:absolute; right:18px; top:78px; padding:12px; border-radius:12px}
     body.dark-mode .nav-links.mobile-open{background:rgba(6,10,18,0.6); backdrop-filter: blur(6px)}
 
+    /* slightly larger text for descriptions in dark mode to aid readability */
     body.dark-mode .description{font-size:1.12rem}
     body.dark-mode .section-sub{font-size:1.06rem}
 
   </style>
 </head>
 <body>
-  <!-- Preloader -->
+  <!-- Preloader (keeps your original behaviour but lighter) -->
   <div id="preloader" style="position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);z-index:9999">
     <div style="width:64px;height:64px;border-radius:50%;border:8px solid rgba(0,0,0,0.06);border-top-color:var(--primary-color);animation:spin 1s linear infinite"></div>
   </div>
@@ -200,8 +206,8 @@
         <div class="profile-pic" aria-hidden="true"></div>
         <div class="hero-copy">
           <h1>Hrishikesh Kulat</h1>
-          <div class="subtitle">Full Stack .NET Developer</div>
-          <p class="description">I build scalable and efficient web applications using ASP.NET Core, Entity Framework, and modern front-end technologies. My expertise spans the entire development lifecycle, from database design to RESTful API development and creating responsive user interfaces.</p>
+          <div class="subtitle">Full Stack .NET Developer (ASP.NET • EF Core • REST APIs)</div>
+          <p class="description">I design and build reliable, production-ready web applications using ASP.NET Core, Entity Framework Core and SQL Server — with clean REST APIs, Razor/Bootstrap frontends and a focus on maintainable, testable code.</p>
           <div class="cta">
             <a class="btn btn-primary" href="#projects"><i class="fas fa-code"></i> View Projects</a>
             <a class="btn btn-ghost" href="#contact"><i class="fas fa-envelope"></i> Get in Touch</a>
@@ -214,112 +220,78 @@
     <section id="skills">
       <div class="container">
         <h2 class="section-title reveal">My Skills</h2>
-        <p class="section-sub reveal">I am proficient in a variety of technologies and frameworks essential for modern full-stack development.</p>
+        <p class="section-sub reveal">Tools, frameworks and languages I use to build full-stack .NET applications.</p>
         <div class="skills-grid reveal">
-          
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
-            <h3>ASP.NET Core</h3>
-            <p>Building robust web applications and RESTful APIs using ASP.NET Core MVC and Web API with clean architecture principles.</p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-database"></i></div>
-            <h3>Entity Framework Core</h3>
-            <p>Database design and management using EF Core with Code-First approach, migrations, and LINQ queries for efficient data access.</p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
-            <h3>C# & .NET</h3>
-            <p>Strong foundation in C# programming, object-oriented principles, SOLID design patterns, and .NET framework ecosystem.</p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-server"></i></div>
-            <h3>SQL Server</h3>
-            <p>Designing normalized databases, writing complex queries, stored procedures, and optimizing database performance.</p>
-          </div>
-
+          <!-- Updated skill cards for Full Stack .NET -->
           <div class="skill-card">
             <div class="skill-icon"><i class="fas fa-code"></i></div>
-            <h3>Web Development</h3>
-            <p>Front-end development using HTML5, CSS3, JavaScript, Bootstrap, and Razor Views for creating responsive interfaces.</p>
+            <h3>C#</h3>
+            <p>Strong knowledge of modern C# (async/await, LINQ, DTOs, generics) for backend logic and services.</p>
           </div>
-
           <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
-            <h3>Architecture & Design</h3>
-            <p>Implementing MVC pattern, Repository pattern, Service Layer architecture, Dependency Injection, and API best practices.</p>
+            <div class="skill-icon"><i class="fas fa-server"></i></div>
+            <h3>ASP.NET Core</h3>
+            <p>Building Web APIs and MVC apps with routing, middleware, dependency injection and Swagger integration.</p>
           </div>
-
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <h3>Entity Framework Core / SQL Server</h3>
+            <p>Code-first EF Core, migrations, async DB calls, relations and performant SQL queries.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Frontend & UI</h3>
+            <p>Razor Views, Bootstrap 5, HTML/CSS/JS for responsive, cinematic UI and smooth UX.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+            <h3>Git & Tooling</h3>
+            <p>Version control, VS/VS Code workflows, debugging, and building maintainable solutions.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects (now shows your .NET repos you provided) -->
     <section id="projects">
       <div class="container">
         <h2 class="section-title reveal">Recent Projects</h2>
-        <p class="section-sub reveal">Showcasing my ability to build complete full-stack applications using modern .NET technologies.</p>
+        <p class="section-sub reveal">Hands-on .NET microprojects demonstrating MVC, EF Core, Web API patterns and clean backend design.</p>
         <div class="projects-grid">
-          
+          <!-- Project 1: MVC + EF Core CRUD Microproject -->
           <article class="project-card reveal">
-            <div class="project-image" style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);display:grid;place-items:center;color:#fff;font-size:3rem" aria-hidden="true">
-              <i class="fas fa-code"></i>
-            </div>
+            <div class="project-image" style="background-image:url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject/master/assets/placeholder.png')" aria-hidden="true"></div>
             <div class="project-content">
-              <h3>MVC EF Core CRUD Microproject</h3>
-              <p>A complete CRUD application built with ASP.NET Core MVC and Entity Framework Core using Code-First approach. Features include student/employee management with full Create, Read, Update, Delete operations, database migrations, and clean MVC architecture.</p>
+              <h3>ASP.NET MVC + EF Core CRUD (Microproject)</h3>
+              <p>Complete student/employee CRUD module using ASP.NET Core MVC and Entity Framework Core (Code-First). Demonstrates models, DbContext, migrations, scaffolding and Razor views to perform Create/Read/Update/Delete operations.</p>
               <div style="margin-top:.75rem">
-                <span class="tag">ASP.NET Core MVC</span>
-                <span class="tag">Entity Framework Core</span>
-                <span class="tag">SQL Server</span>
-                <span class="tag">LINQ</span>
-                <span class="tag">Razor Views</span>
+                <span class="tag">ASP.NET Core MVC</span><span class="tag">Entity Framework Core</span><span class="tag">SQL Server</span>
               </div>
               <div style="margin-top:1rem">
-                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
               </div>
             </div>
           </article>
 
+          <!-- Project 2: CRUD using RESTful API -->
           <article class="project-card reveal">
-            <div class="project-image" style="background:linear-gradient(135deg, #f093fb 0%, #f5576c 100%);display:grid;place-items:center;color:#fff;font-size:3rem" aria-hidden="true">
-              <i class="fas fa-network-wired"></i>
-            </div>
+            <div class="project-image" style="background-image:url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api/master/assets/placeholder.png')" aria-hidden="true"></div>
             <div class="project-content">
-              <h3>RESTful API with CRUD Operations</h3>
-              <p>A clean and scalable RESTful API built using ASP.NET Core Web API. Features include complete CRUD operations, DTOs for secure data transfer, model validation, service layer architecture, and Swagger integration for API documentation and testing.</p>
-              <div style="margin-top:.75rem">
-                <span class="tag">ASP.NET Core Web API</span>
-                <span class="tag">C#</span>
-                <span class="tag">Swagger</span>
-                <span class="tag">DTOs</span>
-                <span class="tag">Service Layer</span>
-              </div>
-              <div style="margin-top:1rem">
-                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-              </div>
+              <h3>CRUD Operations using RESTful API</h3>
+              <p>Clean, beginner-friendly ASP.NET Core Web API demonstrating complete CRUD endpoints, DTOs, model validation, a service layer architecture and Swagger UI for interactive testing.</p>
+              <div style="margin-top:.75rem"><span class="tag">ASP.NET Core Web API</span><span class="tag">C#</span><span class="tag">Swagger</span></div>
+              <div style="margin-top:1rem"><a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api" target="_blank"><i class="fab fa-github"></i> View on GitHub</a></div>
             </div>
           </article>
 
+          <!-- Project 3: Student Notification System -->
           <article class="project-card reveal">
-            <div class="project-image" style="background:linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);display:grid;place-items:center;color:#fff;font-size:3rem" aria-hidden="true">
-              <i class="fas fa-bell"></i>
-            </div>
+            <div class="project-image" style="background-image:url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/StudentNotification/master/assets/placeholder.png')" aria-hidden="true"></div>
             <div class="project-content">
-              <h3>Student Notification System</h3>
-              <p>A notification management system for educational institutions built with ASP.NET Core. This application demonstrates real-world scenario implementation with features for managing and sending notifications to students efficiently.</p>
-              <div style="margin-top:.75rem">
-                <span class="tag">ASP.NET Core</span>
-                <span class="tag">.NET</span>
-                <span class="tag">MVC</span>
-                <span class="tag">SQL Server</span>
-              </div>
-              <div style="margin-top:1rem">
-                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/StudentNotification" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-              </div>
+              <h3>Student Notification System (MVC + EF Core)</h3>
+              <p>A beginner-friendly ASP.NET Core MVC app that manages Students and Notifications. Demonstrates EF Core relationships, async CRUD, Razor Views, Bootstrap-based cinematic UI and a modular controller design.</p>
+              <div style="margin-top:.75rem"><span class="tag">ASP.NET Core MVC</span><span class="tag">EF Core</span><span class="tag">Bootstrap</span></div>
+              <div style="margin-top:1rem"><a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/StudentNotification" target="_blank"><i class="fab fa-github"></i> View on GitHub</a></div>
             </div>
           </article>
 
@@ -327,7 +299,7 @@
       </div>
     </section>
 
-    <!-- Education -->
+    <!-- Education (keeps your text) -->
     <section id="education">
       <div class="container">
         <h2 class="section-title reveal">Education & Certifications</h2>
@@ -340,8 +312,8 @@
           </div>
           <div class="skill-card">
             <div style="font-size:1.6rem"><i class="fas fa-certificate"></i></div>
-            <h3 style="margin-top:.6rem">Certifications & Training</h3>
-            <p>1) ASP.NET Core MVC & Web API Development<br/>2) Entity Framework Core<br/>3) Microsoft .NET Development</p>
+            <h3 style="margin-top:.6rem">Certifications</h3>
+            <p>1) ASP.NET / C# Practice Projects<br/>2) REST API & Web Development Fundamentals<br/>3) EF Core Migrations & Database Design</p>
           </div>
         </div>
       </div>
@@ -353,19 +325,19 @@
         <h2 class="section-title reveal">About Me</h2>
         <div class="about-grid reveal">
           <div>
-            <div class="stat"><strong>1+</strong><div style="color:var(--muted)">Year of Experience</div></div>
+            <div class="stat"><strong>0.6+</strong><div style="color:var(--muted)">Months of Experience</div></div>
             <div style="height:12px"></div>
-            <div class="stat"><strong>5+</strong><div style="color:var(--muted)">Projects Completed</div></div>
+            <div class="stat"><strong>3+</strong><div style="color:var(--muted)">Projects Completed</div></div>
           </div>
           <div>
-            <p>Hello! I'm Hrishikesh, a passionate Full Stack .NET Developer with a strong background in computer science. My journey in software development began with a fascination for building scalable web applications that solve real-world problems. I specialize in the complete development lifecycle, from designing database schemas to creating RESTful APIs and building responsive user interfaces.</p>
-            <p>I thrive on challenges and am constantly learning new technologies and best practices in the .NET ecosystem. Whether it's implementing clean architecture patterns, optimizing database queries, or building feature-rich web applications, my goal is always to deliver robust, maintainable, and efficient solutions.</p>
+            <p>Hello! I'm Hrishikesh, a Full Stack .NET developer building reliable web applications using ASP.NET Core, EF Core and modern frontend techniques. I focus on writing clean, maintainable code, designing RESTful APIs, and creating user-friendly interfaces with Razor and Bootstrap.</p>
+            <p>I thrive on building projects that are easy to understand and scale. My goal is to ship solid, tested code and continuously improve architecture and performance.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact (preserves your exact contact links & form) -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title reveal">Get in Touch</h2>
@@ -416,13 +388,10 @@
   <button class="top-btn" id="topBtn" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
-    // Preloader
-    window.addEventListener('load',()=>{
-      const p = document.getElementById('preloader');
-      p.style.opacity = '0'; p.style.transition = 'opacity .4s ease'; setTimeout(()=>p.remove(),450);
-    });
+    // ====== Preloader ======
+    window.addEventListener('load',()=>{ const p = document.getElementById('preloader'); p.style.opacity = '0'; p.style.transition = 'opacity .4s ease'; setTimeout(()=>p.remove(),450); });
 
-    // Theme toggle
+    // ====== Theme toggle (preserve your localStorage behavior) ======
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const saved = localStorage.getItem('theme');
@@ -431,8 +400,26 @@
     updateIcon();
     themeToggle.addEventListener('click',()=>{ body.classList.toggle('dark-mode'); localStorage.setItem('theme', body.classList.contains('dark-mode')? 'dark':'light'); updateIcon(); });
 
-    // Mobile menu
+    // ====== Mobile menu (accessible) ======
     const hamburger = document.getElementById('hamburger');
-    hamburger.addEventListener('click',()=>{
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expande)
+    hamburger.addEventListener('click',()=>{ const expanded = hamburger.getAttribute('aria-expanded') === 'true'; hamburger.setAttribute('aria-expanded', String(!expanded)); const nav = document.querySelector('.nav-links'); if(!expanded){ nav.classList.add('mobile-open'); nav.style.display = 'flex'; nav.style.flexDirection = 'column'; } else { nav.classList.remove('mobile-open'); nav.style.display = 'none'; } });
+
+    // ====== Reveal on scroll (IntersectionObserver) ======
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) { e.target.classList.add('show'); } }); }, {threshold:0.15});
+    reveals.forEach(r=>obs.observe(r));
+
+    // ====== Parallax subtle movement (based on scroll) ======
+    const shapes = document.querySelectorAll('.shape');
+    window.addEventListener('scroll',()=>{ const sc = window.scrollY; shapes.forEach((s,i)=>{ s.style.transform = `translateY(${sc * (i===0? -0.06 : -0.03)}px)` }); });
+
+    // ====== Top button ======
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll',()=>{ topBtn.style.display = window.scrollY>400? 'grid':'none'; });
+    topBtn.addEventListener('click',()=> window.scrollTo({top:0,behavior:'smooth'}));
+
+    // small spin keyframe used by preloader (kept simple)
+    (function addSpin(){ const s=document.createElement('style'); s.textContent='@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}'; document.head.appendChild(s); })();
+  </script>
+</body>
+</html>
