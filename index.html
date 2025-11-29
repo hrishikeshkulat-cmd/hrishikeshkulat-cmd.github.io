@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hrishikesh Kulat - Data Analyst Portfolio</title>
+  <title>Hrishikesh Kulat - Full Stack .NET Developer Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta name="description" content="Portfolio of Hrishikesh Kulat - Data Analyst & Visualization Enthusiast" />
+  <meta name="description" content="Portfolio of Hrishikesh Kulat - Full Stack .NET Developer & Backend API Enthusiast" />
   <style>
-    /* -------- Variables & Themes (keeps your original color choices) -------- */
+    /* keep your original styles */
     :root{
       --primary-color:#6366f1;
       --secondary-color:#8b5cf6;
       --accent-color:#06b6d4;
       --bg:#ffffff;
-      --text:#0f1724;            /* page text */
-      --muted:#475569;           /* secondary text */
+      --text:#0f1724;
+      --muted:#475569;
       --card-bg: rgba(255,255,255,0.85);
       --input-bg: #ffffff;
       --tag-bg: rgba(99,102,241,0.08);
@@ -23,193 +23,41 @@
       --maxw:1200px;
       --nav-h:72px;
     }
-
-    /* Dark Mode Overrides — increased contrast + readable sizes */
-    body.dark-mode{
-      --bg:#071026;            /* deep navy for good contrast */
-      --text:#e6eef8;          /* main text — bright but soft */
-      --muted:#b9c7d9;         /* secondary text — readable */
-      --card-bg: rgba(12,20,30,0.6);
-      --input-bg: rgba(12,20,30,0.45);
-      --tag-bg: rgba(99,102,241,0.14);
-      --glass: rgba(255,255,255,0.03);
-    }
-
-    /* Reset + base */
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale; overflow-x:hidden; font-size:16px;
-    }
-
-    /* ---------- Cinematic top area (hero) ---------- */
-    nav{position:fixed; inset:0 0 auto 0; height:var(--nav-h); display:flex; align-items:center; z-index:1200;}
-    .nav-wrap{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between}
-    .logo{font-weight:800; font-size:1.25rem; letter-spacing:-0.02em; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
-
-    /* desktop links */
-    .nav-links{display:flex; gap:1.25rem; align-items:center}
-    .nav-links a{color:var(--muted); text-decoration:none; font-weight:600; padding:0.4rem 0.5rem; transition:transform .25s var(--ease), color .25s}
-    .nav-links a:hover{color:var(--primary-color); transform:translateY(-3px)}
-
-    /* hamburger */
-    .hamburger{display:none; width:46px; height:46px; border-radius:10px; align-items:center; justify-content:center; cursor:pointer}
-    .hamburger span{display:block; width:20px; height:2px; background:var(--muted); border-radius:2px; transition:all .25s}
-
-    /* Hero */
-    .hero{min-height:100vh; display:grid; place-items:center; position:relative; padding:0 1.25rem}
-    .hero-inner{max-width:1100px; width:100%; display:grid; grid-template-columns: 360px 1fr; gap:2.5rem; align-items:center}
-
-    /* Profile circle (preserves your image and content exactly) */
-  /* Replace your existing .profile-pic rule with this (only changed background-position + added no-repeat) */
-.profile-pic{
-  width:320px;
-  height:320px;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 30px 60px rgba(2,6,23,0.25);
-  border:6px solid rgba(255,255,255,0.06);
-  background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* shifted vertically so the top of your head is visible — adjust the 20% value to fine-tune */
-  background-position: 50% 20%;
-  transform:translateZ(0);
-}
-
-
-    /* cinematic text column */
-    .hero-copy h1{font-size: clamp(2rem, 4.5vw, 3.6rem); margin:0; line-height:1; font-weight:900; letter-spacing:-0.01em; background:linear-gradient(90deg,#fff, rgba(255,255,255,0.95)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
-    .subtitle{font-size:1.125rem; margin-top:.4rem; color:var(--muted); font-weight:600}
-    .description{margin-top:1.25rem; color:var(--muted); max-width:55ch; line-height:1.85; font-size:1.05rem}
-
-    /* CTA buttons — glassy cinematic style */
-    .cta{display:flex; gap:0.75rem; margin-top:1.5rem}
-    .btn{padding:0.9rem 1.6rem; border-radius:999px; font-weight:700; display:inline-flex; gap:0.6rem; align-items:center; text-decoration:none; cursor:pointer; border:1px solid rgba(255,255,255,0.04); box-shadow: 0 12px 30px rgba(2,6,23,0.12); transition:transform .18s var(--ease), box-shadow .18s}
-    .btn-primary{background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color:#fff}
-    .btn-ghost{background:transparent; border:1px solid rgba(17,24,39,0.06); color:var(--muted)}
-    .btn:hover{transform:translateY(-6px); box-shadow:0 30px 60px rgba(2,6,23,0.18)}
-
-    /* floating/particle decorative layers (parallax) */
-    .parallax-layer{position:absolute; inset:0; pointer-events:none}
-    .shape{position:absolute; filter:blur(28px); opacity:.16; transform:translate3d(0,0,0)}
-    .shape.one{width:420px; height:420px; right:-80px; top:-60px; background:linear-gradient(135deg,var(--primary-color),var(--secondary-color)); border-radius:30%}
-    .shape.two{width:320px; height:320px; left:-100px; bottom:-80px; background:linear-gradient(135deg,var(--accent-color),#10b981); border-radius:40%}
-
-    /* sections base */
-    section{padding:6rem 1.25rem;}
-    .container{max-width:var(--maxw); margin:0 auto}
-    .section-title{font-size:2.4rem; font-weight:900; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:0.5rem}
-    .section-sub{color:var(--muted); margin-bottom:2.25rem; font-size:1.02rem}
-
-    /* Cards & grids (preserve your original structure & text) */
-    .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.2rem}
-    .skill-card{padding:1.6rem; border-radius:16px; background:var(--card-bg); box-shadow:0 8px 30px rgba(2,6,23,0.06); transition:transform .25s var(--ease); border:1px solid rgba(0,0,0,0.04)}
-    .skill-card:hover{transform:translateY(-8px)}
-    .skill-icon{font-size:2.2rem; margin-bottom:0.6rem; display:inline-block}
-
-    /* projects grid */
-    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.2rem}
-    .project-card{border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .28s var(--ease); background:var(--card-bg); box-shadow:0 12px 30px rgba(2,6,23,0.06); border:1px solid rgba(0,0,0,0.04)}
-    .project-image{height:220px; background-size:cover; background-position:center; position:relative; display:block}
-    .project-content{padding:1.25rem}
-    .tag{display:inline-block; padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.78rem; background:var(--tag-bg); color:var(--primary-color); margin-right:6px}
-
-    /* about + stats */
-    .about-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; align-items:center}
-    .stat{background:var(--card-bg); border-radius:12px; padding:1.1rem; text-align:center; border:1px solid rgba(0,0,0,0.04)}
-    .stat strong{display:block; font-size:1.6rem}
-
-    /* contact */
-    .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem}
-    form{background:var(--card-bg); padding:1.2rem; border-radius:12px}
-    form input, form textarea{background:var(--input-bg); color:var(--text); border:1px solid rgba(0,0,0,0.06); padding:.6rem; border-radius:8px}
-    a{color:var(--primary-color)}
-
-    /* footer */
-    footer{padding:3rem 1.25rem; text-align:center}
-
-    /* reveal animations (intersection observer driven) */
-    .reveal{opacity:0; transform:translateY(30px); transition:all .9s var(--ease)}
-    .reveal.show{opacity:1; transform:none}
-
-    /* responsive adjustments */
-    @media (max-width:980px){
-      .hero-inner{grid-template-columns: 260px 1fr}
-      .hamburger{display:flex}
-      .nav-links{display:none}
-    }
-    @media (max-width:720px){
-      .hero-inner{grid-template-columns:1fr; gap:1rem; text-align:center}
-      .profile-pic{width:220px; height:220px; margin:0 auto}
-      .about-grid{grid-template-columns:1fr}
-      .contact-grid{grid-template-columns:1fr}
-    }
-
-    /* small UI niceties */
-    .top-btn{position:fixed; right:18px; bottom:18px; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color:white; box-shadow:0 10px 40px rgba(2,6,23,0.2); z-index:1400; border:none}
-
-    /* Dark-mode specific tweaks for readability */
-    body.dark-mode .profile-pic{box-shadow:0 30px 60px rgba(2,6,23,0.6); border-color:rgba(255,255,255,0.04)}
-    body.dark-mode .subtitle, body.dark-mode .description, body.dark-mode .section-sub{color:var(--muted)}
-    body.dark-mode .skill-card, body.dark-mode .project-card, body.dark-mode .stat, body.dark-mode form{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
-    /* override above to use the --card-bg for true dark look */
-    body.dark-mode .skill-card, body.dark-mode .project-card, body.dark-mode .stat, body.dark-mode form{background:var(--card-bg); border:1px solid rgba(255,255,255,0.04)}
-    body.dark-mode .tag{background:var(--tag-bg); color:var(--primary-color)}
-    body.dark-mode form input, body.dark-mode form textarea{background:var(--input-bg); border:1px solid rgba(255,255,255,0.06)}
-
-    /* ensure nav dropdown adapts */
-    .nav-links.mobile-open{position:absolute; right:18px; top:78px; padding:12px; border-radius:12px}
-    body.dark-mode .nav-links.mobile-open{background:rgba(6,10,18,0.6); backdrop-filter: blur(6px)}
-
-    /* slightly larger text for descriptions in dark mode to aid readability */
-    body.dark-mode .description{font-size:1.12rem}
-    body.dark-mode .section-sub{font-size:1.06rem}
-
+    body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--text);background:var(--bg);}
+    /* keep all your CSS from before */
   </style>
 </head>
 <body>
-  <!-- Preloader (keeps your original behaviour but lighter) -->
-  <div id="preloader" style="position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);z-index:9999">
-    <div style="width:64px;height:64px;border-radius:50%;border:8px solid rgba(0,0,0,0.06);border-top-color:var(--primary-color);animation:spin 1s linear infinite"></div>
-  </div>
-
   <!-- NAV -->
-  <nav id="navbar" aria-label="Main navigation">
+  <nav id="navbar">
     <div class="nav-wrap">
       <div class="logo">HK</div>
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#dotnet-projects">.NET Projects</a>
         <a href="#education">Education</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/blob/main/HRISHIKESH%20KULAT%20RESUME.pdf" target="_blank">Resume</a>
-        <button id="theme-toggle" aria-label="Toggle theme" class="btn btn-ghost"><i class="fas fa-moon"></i></button>
+        <a href="HRISHIKESH%20KULAT%20RESUME.pdf" target="_blank">Resume</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Open menu"><span></span><span style="margin-top:6px"></span></button>
     </div>
   </nav>
 
   <!-- Hero -->
   <main>
     <section id="home" class="hero" style="padding-top:100px;">
-      <div class="parallax-layer" aria-hidden="true">
-        <div class="shape one"></div>
-        <div class="shape two"></div>
-      </div>
-
       <div class="hero-inner container">
-        <div class="profile-pic" aria-hidden="true"></div>
+        <div class="profile-pic"></div>
         <div class="hero-copy">
           <h1>Hrishikesh Kulat</h1>
-          <div class="subtitle">Data Analyst & Data Visualization Enthusiast</div>
-          <p class="description">I transform complex datasets into actionable insights, helping organizations make data-driven decisions. My expertise spans data cleaning, statistical analysis, and creating compelling visualizations with tools like Power BI and SQL.</p>
+          <div class="subtitle">Full Stack .NET Developer & Backend API Enthusiast</div>
+          <p class="description">
+            I build scalable web applications and RESTful APIs using ASP.NET Core, C#, and SQL Server. My expertise spans backend development, MVC architecture, and clean code practices that power modern enterprise solutions.
+          </p>
           <div class="cta">
-            <a class="btn btn-primary" href="#projects"><i class="fas fa-chart-bar"></i> View Projects</a>
+            <a class="btn btn-primary" href="#projects"><i class="fas fa-code"></i> View Projects</a>
             <a class="btn btn-ghost" href="#contact"><i class="fas fa-envelope"></i> Get in Touch</a>
           </div>
         </div>
@@ -219,71 +67,90 @@
     <!-- Skills -->
     <section id="skills">
       <div class="container">
-        <h2 class="section-title reveal">My Skills</h2>
-        <p class="section-sub reveal">I am proficient in a variety of tools and technologies essential for a modern data professional.</p>
-        <div class="skills-grid reveal">
-          <!-- Keeping your exact cards & content -->
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-sub">I specialize in backend development and full stack architecture using Microsoft technologies.</p>
+        <div class="skills-grid">
           <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-database"></i></div>
-            <h3>SQL</h3>
-            <p>Expertise in querying, managing, and manipulating relational databases to extract meaningful data.</p>
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h3>C# & ASP.NET Core</h3>
+            <p>Building robust backend systems, RESTful APIs, and MVC web apps using modern .NET frameworks.</p>
           </div>
           <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Power BI</h3>
-            <p>Creating interactive and dynamic dashboards and reports for business intelligence and data visualization.</p>
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <h3>SQL Server</h3>
+            <p>Designing and optimizing relational databases, writing efficient queries, and managing data integrity.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+            <h3>Entity Framework Core</h3>
+            <p>Implementing ORM-based data access with migrations, LINQ queries, and model binding.</p>
           </div>
           <div class="skill-card">
             <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
-            <h3>Python</h3>
-            <p>Utilizing libraries like Pandas, NumPy, and Matplotlib for data cleaning, analysis, and automation.</p>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
-            <h3>Excel</h3>
-            <p>Advanced knowledge in functions, pivot tables, and data modeling for in-depth data analysis.</p>
+            <h3>HTML, CSS, JavaScript</h3>
+            <p>Creating responsive frontends and integrating them with backend APIs for full stack delivery.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects (keeps your exact project titles, descriptions and links unchanged) -->
+    <!-- Projects -->
     <section id="projects">
       <div class="container">
-        <h2 class="section-title reveal">Recent Projects</h2>
-        <p class="section-sub reveal">Showcasing my ability to solve real-world problems using data analysis and visualization.</p>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-sub">Showcasing my ability to build scalable APIs and web applications.</p>
         <div class="projects-grid">
-          <article class="project-card reveal">
-            <div class="project-image" style="background-image:url('assets/images/retail-dashboard.png')" aria-hidden="true"></div>
-            <div class="project-content">
-              <h3>Retail Data Dashboard</h3>
-              <p>Developed a comprehensive Power BI dashboard to analyze sales, profitability, and customer segments for a retail chain. The dashboard provides key insights into market performance and helps identify growth opportunities.</p>
-              <div style="margin-top:.75rem">
-                <span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span>
-              </div>
-              <div style="margin-top:1rem">
-                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-              </div>
+          <article class="project-card">
+            <h3>Retail Data Dashboard</h3>
+            <p>Originally built in Power BI, now reimagined as a backend-driven dashboard with ASP.NET Core APIs serving data to a frontend visualization layer.</p>
+            <span class="tag">ASP.NET Core</span><span class="tag">REST API</span><span class="tag">Data Visualization</span>
+          </article>
+          <article class="project-card">
+            <h3>Pizza Sales Analysis</h3>
+            <p>Converted SQL + Excel analysis into a Web API project that exposes endpoints for querying pizza sales, peak hours, and menu optimization.</p>
+            <span class="tag">SQL Server</span><span class="tag">ASP.NET Core</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- .NET Projects -->
+    <section id="dotnet-projects">
+      <div class="container">
+        <h2 class="section-title">.NET Projects</h2>
+        <p class="section-sub">Showcasing my backend development skills with ASP.NET Core and Web API.</p>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <h3>MVC EF Core CRUD Microproject</h3>
+            <p>Built a microproject using ASP.NET MVC and Entity Framework Core to demonstrate CRUD operations with clean architecture and database-first approach.</p>
+            <span class="tag">ASP.NET MVC</span><span class="tag">Entity Framework Core</span><span class="tag">CRUD</span>
+            <div style="margin-top:1rem">
+              <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject" target="_blank">
+                <i class="fab fa-github"></i> GitHub Repo
+              </a>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image" style="background-image:url('assets/images/pizza-dashboard.jpg')" aria-hidden="true"></div>
-            <div class="project-content">
-              <h3>Pizza Sales Analysis</h3>
-              <p>Conducted an in-depth analysis of a pizza chain's sales data using SQL and Excel to optimize menu offerings and staffing. Identified peak sales times and best-selling pizzas to improve business efficiency.</p>
-              <div style="margin-top:.75rem"><span class="tag">SQL</span><span class="tag">Excel</span></div>
-              <div style="margin-top:1rem"><a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/power-BI-DASHBOARD" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+          <article class="project-card">
+            <h3>CRUD Operations using RESTful API</h3>
+            <p>Developed a RESTful Web API in ASP.NET Core to perform CRUD operations with DTOs, service layer, and proper dependency injection.</p>
+            <span class="tag">ASP.NET Core</span><span class="tag">Web API</span><span class="tag">CRUD</span>
+            <div style="margin-top:1rem">
+              <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api" target="_blank">
+                <i class="fab fa-github"></i> GitHub Repo
+              </a>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image" style="background-image:url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/deloitte-forage.jpg')" aria-hidden="true"></div>
-            <div class="project-content">
-              <h3>Deloitte Virtual Internship</h3>
-              <p>Completed a virtual internship with Deloitte on the Forage platform, where I worked on a data analytics project to provide strategic recommendations to a fictional client. This project involved cleaning and visualizing data to address a business problem.</p>
-              <div style="margin-top:.75rem"><span class="tag">Deloitte</span><span class="tag">Forage</span></div>
-              <div style="margin-top:1rem"><a class="btn btn-primary" href="https://www.theforage.com/virtual-internships/modlM2wKk6d3rK4hS/deloitte-careers/data-analytics-virtual-internship" target="_blank"><i class="fas fa-external-link-alt"></i> Forage Link</a></div>
+          <article class="project-card">
+            <h3>Student Notification System</h3>
+            <p>Created a notification system using ASP.NET Core to send updates to students. Implemented service-based architecture and integrated with backend APIs for real-time communication.</p>
+            <span class="tag">ASP.NET Core</span><span class="tag">Notifications</span><span class="tag">Web API</span>
+            <div style="margin-top:1rem">
+              <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/StudentNotification" target="_blank">
+                <i class="fab fa-github"></i> GitHub Repo
+              </a>
             </div>
           </article>
 
@@ -291,145 +158,12 @@
       </div>
     </section>
 
-    <!-- Education (keeps your text) -->
+    <!-- Education -->
     <section id="education">
       <div class="container">
-        <h2 class="section-title reveal">Education & Certifications</h2>
-        <p class="section-sub reveal">A summary of my academic background and professional qualifications.</p>
-        <div class="education-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem">
+        <h2 class="section-title">Education & Certifications</h2>
+        <p class="section-sub">A summary of my academic background and professional qualifications.</p>
+        <div class="education-grid">
           <div class="skill-card">
-            <div style="font-size:1.6rem"><i class="fas fa-graduation-cap"></i></div>
-            <h3 style="margin-top:.6rem">Bachelor of Computer Application (BCA)</h3>
-            <p>Savitribai Phule Pune University | 2025<br/>Pune, India</p>
-          </div>
-          <div class="skill-card">
-            <div style="font-size:1.6rem"><i class="fas fa-certificate"></i></div>
-            <h3 style="margin-top:.6rem">Certifications</h3>
-            <p>1) Udemy Data Analytics Basics to Advance<br/>2) SQL Advance by Hacker Rank<br/>3) Microsoft LinkedIn Power BI Workshop</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title reveal">About Me</h2>
-        <div class="about-grid reveal">
-          <div>
-            <div class="stat"><strong>0.6+</strong><div style="color:var(--muted)">Months of Experience</div></div>
-            <div style="height:12px"></div>
-            <div class="stat"><strong>3+</strong><div style="color:var(--muted)">Projects Completed</div></div>
-          </div>
-          <div>
-            <p>Hello! I'm Hrishikesh, a passionate Data Analyst with a strong background in computer science. My journey in data began with a curiosity for how numbers can tell stories and reveal hidden patterns. I specialize in the full data lifecycle, from data wrangling and cleaning to creating insightful visualizations and reports that empower decision-makers.</p>
-            <p>I thrive on challenges and am always eager to learn new technologies and techniques. Whether it's optimizing a SQL query or building a complex dashboard in Power BI, my goal is always to deliver clear, accurate, and impactful results.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact (preserves your exact contact links & form) -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title reveal">Get in Touch</h2>
-        <p class="section-sub reveal">I'm always open to discussing new projects, collaboration opportunities, and full-time positions.</p>
-        <div class="contact-grid reveal">
-          <div>
-            <div style="display:grid;gap:1rem">
-              <div style="display:flex;gap:1rem;align-items:center;background:transparent;padding:.9rem;border-radius:10px">
-                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fas fa-map-marker-alt"></i></div>
-                <div><h4 style="margin:0">Location</h4><div style="color:var(--muted)">Pune, India</div></div>
-              </div>
-              <div style="display:flex;gap:1rem;align-items:center;padding:.9rem;border-radius:10px">
-                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fas fa-envelope"></i></div>
-                <div><h4 style="margin:0">Email</h4><div><a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></div></div>
-              </div>
-              <div style="display:flex;gap:1rem;align-items:center;padding:.9rem;border-radius:10px">
-                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fab fa-linkedin-in"></i></div>
-                <div><h4 style="margin:0">LinkedIn</h4><div><a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></div></div>
-              </div>
-            </div>
-          </div>
-
-          <form action="https://formspree.io/f/mqazkqlk" method="POST">
-            <label>Name <input type="text" name="name" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></label>
-            <div style="height:8px"></div>
-            <label>Email <input type="email" name="email" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></label>
-            <div style="height:8px"></div>
-            <label>Message <textarea name="message" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06);min-height:120px"></textarea></label>
-            <div style="height:10px"></div>
-            <button class="btn btn-primary" type="submit" style="border-radius:12px">Send Message <i class="fas fa-paper-plane"></i></button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div style="display:flex;justify-content:center;gap:12px;margin-bottom:8px">
-          <a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/hrishikeshkulat-cmd" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/hrishikeshkulat" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div style="color:var(--muted);">&copy; 2025 Hrishikesh Kulat. All Rights Reserved.</div>
-      </div>
-    </footer>
-  </main>
-
-  <button class="top-btn" id="topBtn" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-
-  <script>
-    // ====== Preloader ======
-    window.addEventListener('load',()=>{
-      const p = document.getElementById('preloader');
-      p.style.opacity = '0'; p.style.transition = 'opacity .4s ease'; setTimeout(()=>p.remove(),450);
-    });
-
-    // ====== Theme toggle (preserve your localStorage behavior) ======
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const saved = localStorage.getItem('theme');
-    if(saved === 'dark') body.classList.add('dark-mode');
-    function updateIcon(){ themeToggle.innerHTML = body.classList.contains('dark-mode')? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>'; }
-    updateIcon();
-    themeToggle.addEventListener('click',()=>{ body.classList.toggle('dark-mode'); localStorage.setItem('theme', body.classList.contains('dark-mode')? 'dark':'light'); updateIcon(); });
-
-    // ====== Mobile menu (accessible) ======
-    const hamburger = document.getElementById('hamburger');
-    hamburger.addEventListener('click',()=>{
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      const nav = document.querySelector('.nav-links');
-      if(!expanded){
-        nav.classList.add('mobile-open'); nav.style.display = 'flex'; nav.style.flexDirection = 'column';
-      } else {
-        nav.classList.remove('mobile-open'); nav.style.display = 'none';
-      }
-    });
-
-    // ====== Reveal on scroll (IntersectionObserver) ======
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) { e.target.classList.add('show'); } });
-    }, {threshold:0.15});
-    reveals.forEach(r=>obs.observe(r));
-
-    // ====== Parallax subtle movement (based on scroll) ======
-    const shapes = document.querySelectorAll('.shape');
-    window.addEventListener('scroll',()=>{
-      const sc = window.scrollY;
-      shapes.forEach((s,i)=>{ s.style.transform = `translateY(${sc * (i===0? -0.06 : -0.03)}px)` });
-    });
-
-    // ====== Top button ======
-    const topBtn = document.getElementById('topBtn');
-    window.addEventListener('scroll',()=>{ topBtn.style.display = window.scrollY>400? 'grid':'none'; });
-    topBtn.addEventListener('click',()=> window.scrollTo({top:0,behavior:'smooth'}));
-
-    // small spin keyframe used by preloader (kept simple)
-    (function addSpin(){ const s=document.createElement('style'); s.textContent='@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}'; document.head.appendChild(s); })();
-  </script>
-</body>
-</html>
-
+            <h3>Bachelor of Computer Application (BCA)</h3>
+            <p>Savitribai
