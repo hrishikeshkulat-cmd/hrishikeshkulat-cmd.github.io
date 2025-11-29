@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hrishikesh Kulat - Full Stack .NET Developer Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta name="description" content="Portfolio of Hrishikesh Kulat - Full Stack .NET Developer & Backend API Enthusiast" />
+  <meta name="description" content="Portfolio of Hrishikesh Kulat - Full Stack .NET Developer" />
   <style>
-    /* keep your original styles */
+    /* -------- Variables & Themes -------- */
     :root{
       --primary-color:#6366f1;
       --secondary-color:#8b5cf6;
@@ -23,39 +23,185 @@
       --maxw:1200px;
       --nav-h:72px;
     }
-    body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--text);background:var(--bg);}
-    /* keep all your CSS from before */
+
+    /* Dark Mode Overrides */
+    body.dark-mode{
+      --bg:#071026;
+      --text:#e6eef8;
+      --muted:#b9c7d9;
+      --card-bg: rgba(12,20,30,0.6);
+      --input-bg: rgba(12,20,30,0.45);
+      --tag-bg: rgba(99,102,241,0.14);
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    /* Reset + base */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; overflow-x:hidden; font-size:16px;
+    }
+
+    /* ---------- Navigation ---------- */
+    nav{position:fixed; inset:0 0 auto 0; height:var(--nav-h); display:flex; align-items:center; z-index:1200;}
+    .nav-wrap{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between}
+    .logo{font-weight:800; font-size:1.25rem; letter-spacing:-0.02em; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+
+    /* desktop links */
+    .nav-links{display:flex; gap:1.25rem; align-items:center}
+    .nav-links a{color:var(--muted); text-decoration:none; font-weight:600; padding:0.4rem 0.5rem; transition:transform .25s var(--ease), color .25s}
+    .nav-links a:hover{color:var(--primary-color); transform:translateY(-3px)}
+
+    /* hamburger */
+    .hamburger{display:none; width:46px; height:46px; border-radius:10px; align-items:center; justify-content:center; cursor:pointer}
+    .hamburger span{display:block; width:20px; height:2px; background:var(--muted); border-radius:2px; transition:all .25s}
+
+    /* Hero */
+    .hero{min-height:100vh; display:grid; place-items:center; position:relative; padding:0 1.25rem}
+    .hero-inner{max-width:1100px; width:100%; display:grid; grid-template-columns: 360px 1fr; gap:2.5rem; align-items:center}
+
+    /* Profile circle */
+    .profile-pic{
+      width:320px;
+      height:320px;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 30px 60px rgba(2,6,23,0.25);
+      border:6px solid rgba(255,255,255,0.06);
+      background-image: url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 20%;
+      transform:translateZ(0);
+    }
+
+    /* cinematic text column */
+    .hero-copy h1{font-size: clamp(2rem, 4.5vw, 3.6rem); margin:0; line-height:1; font-weight:900; letter-spacing:-0.01em; background:linear-gradient(90deg,#fff, rgba(255,255,255,0.95)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .subtitle{font-size:1.125rem; margin-top:.4rem; color:var(--muted); font-weight:600}
+    .description{margin-top:1.25rem; color:var(--muted); max-width:55ch; line-height:1.85; font-size:1.05rem}
+
+    /* CTA buttons */
+    .cta{display:flex; gap:0.75rem; margin-top:1.5rem}
+    .btn{padding:0.9rem 1.6rem; border-radius:999px; font-weight:700; display:inline-flex; gap:0.6rem; align-items:center; text-decoration:none; cursor:pointer; border:1px solid rgba(255,255,255,0.04); box-shadow: 0 12px 30px rgba(2,6,23,0.12); transition:transform .18s var(--ease), box-shadow .18s}
+    .btn-primary{background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color:#fff}
+    .btn-ghost{background:transparent; border:1px solid rgba(17,24,39,0.06); color:var(--muted)}
+    .btn:hover{transform:translateY(-6px); box-shadow:0 30px 60px rgba(2,6,23,0.18)}
+
+    /* floating/particle decorative layers */
+    .parallax-layer{position:absolute; inset:0; pointer-events:none}
+    .shape{position:absolute; filter:blur(28px); opacity:.16; transform:translate3d(0,0,0)}
+    .shape.one{width:420px; height:420px; right:-80px; top:-60px; background:linear-gradient(135deg,var(--primary-color),var(--secondary-color)); border-radius:30%}
+    .shape.two{width:320px; height:320px; left:-100px; bottom:-80px; background:linear-gradient(135deg,var(--accent-color),#10b981); border-radius:40%}
+
+    /* sections base */
+    section{padding:6rem 1.25rem;}
+    .container{max-width:var(--maxw); margin:0 auto}
+    .section-title{font-size:2.4rem; font-weight:900; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:0.5rem}
+    .section-sub{color:var(--muted); margin-bottom:2.25rem; font-size:1.02rem}
+
+    /* Cards & grids */
+    .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.2rem}
+    .skill-card{padding:1.6rem; border-radius:16px; background:var(--card-bg); box-shadow:0 8px 30px rgba(2,6,23,0.06); transition:transform .25s var(--ease); border:1px solid rgba(0,0,0,0.04)}
+    .skill-card:hover{transform:translateY(-8px)}
+    .skill-icon{font-size:2.2rem; margin-bottom:0.6rem; display:inline-block}
+
+    /* projects grid */
+    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.2rem}
+    .project-card{border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .28s var(--ease); background:var(--card-bg); box-shadow:0 12px 30px rgba(2,6,23,0.06); border:1px solid rgba(0,0,0,0.04)}
+    .project-image{height:220px; background-size:cover; background-position:center; position:relative; display:block}
+    .project-content{padding:1.25rem}
+    .tag{display:inline-block; padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.78rem; background:var(--tag-bg); color:var(--primary-color); margin-right:6px; margin-bottom:6px}
+
+    /* about + stats */
+    .about-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; align-items:center}
+    .stat{background:var(--card-bg); border-radius:12px; padding:1.1rem; text-align:center; border:1px solid rgba(0,0,0,0.04)}
+    .stat strong{display:block; font-size:1.6rem}
+
+    /* contact */
+    .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem}
+    form{background:var(--card-bg); padding:1.2rem; border-radius:12px}
+    form input, form textarea{background:var(--input-bg); color:var(--text); border:1px solid rgba(0,0,0,0.06); padding:.6rem; border-radius:8px}
+    a{color:var(--primary-color)}
+
+    /* footer */
+    footer{padding:3rem 1.25rem; text-align:center}
+
+    /* reveal animations */
+    .reveal{opacity:0; transform:translateY(30px); transition:all .9s var(--ease)}
+    .reveal.show{opacity:1; transform:none}
+
+    /* responsive adjustments */
+    @media (max-width:980px){
+      .hero-inner{grid-template-columns: 260px 1fr}
+      .hamburger{display:flex}
+      .nav-links{display:none}
+    }
+    @media (max-width:720px){
+      .hero-inner{grid-template-columns:1fr; gap:1rem; text-align:center}
+      .profile-pic{width:220px; height:220px; margin:0 auto}
+      .about-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    /* small UI niceties */
+    .top-btn{position:fixed; right:18px; bottom:18px; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color:white; box-shadow:0 10px 40px rgba(2,6,23,0.2); z-index:1400; border:none}
+
+    /* Dark-mode specific tweaks */
+    body.dark-mode .profile-pic{box-shadow:0 30px 60px rgba(2,6,23,0.6); border-color:rgba(255,255,255,0.04)}
+    body.dark-mode .subtitle, body.dark-mode .description, body.dark-mode .section-sub{color:var(--muted)}
+    body.dark-mode .skill-card, body.dark-mode .project-card, body.dark-mode .stat, body.dark-mode form{background:var(--card-bg); border:1px solid rgba(255,255,255,0.04)}
+    body.dark-mode .tag{background:var(--tag-bg); color:var(--primary-color)}
+    body.dark-mode form input, body.dark-mode form textarea{background:var(--input-bg); border:1px solid rgba(255,255,255,0.06)}
+
+    /* nav dropdown mobile */
+    .nav-links.mobile-open{position:absolute; right:18px; top:78px; padding:12px; border-radius:12px}
+    body.dark-mode .nav-links.mobile-open{background:rgba(6,10,18,0.6); backdrop-filter: blur(6px)}
+
+    body.dark-mode .description{font-size:1.12rem}
+    body.dark-mode .section-sub{font-size:1.06rem}
+
   </style>
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="preloader" style="position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);z-index:9999">
+    <div style="width:64px;height:64px;border-radius:50%;border:8px solid rgba(0,0,0,0.06);border-top-color:var(--primary-color);animation:spin 1s linear infinite"></div>
+  </div>
+
   <!-- NAV -->
-  <nav id="navbar">
+  <nav id="navbar" aria-label="Main navigation">
     <div class="nav-wrap">
       <div class="logo">HK</div>
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#dotnet-projects">.NET Projects</a>
         <a href="#education">Education</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a href="HRISHIKESH%20KULAT%20RESUME.pdf" target="_blank">Resume</a>
+        <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/blob/main/HRISHIKESH%20KULAT%20RESUME.pdf" target="_blank">Resume</a>
+        <button id="theme-toggle" aria-label="Toggle theme" class="btn btn-ghost"><i class="fas fa-moon"></i></button>
       </div>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Open menu"><span></span><span style="margin-top:6px"></span></button>
     </div>
   </nav>
 
   <!-- Hero -->
   <main>
     <section id="home" class="hero" style="padding-top:100px;">
+      <div class="parallax-layer" aria-hidden="true">
+        <div class="shape one"></div>
+        <div class="shape two"></div>
+      </div>
+
       <div class="hero-inner container">
-        <div class="profile-pic"></div>
+        <div class="profile-pic" aria-hidden="true"></div>
         <div class="hero-copy">
           <h1>Hrishikesh Kulat</h1>
-          <div class="subtitle">Full Stack .NET Developer & Backend API Enthusiast</div>
-          <p class="description">
-            I build scalable web applications and RESTful APIs using ASP.NET Core, C#, and SQL Server. My expertise spans backend development, MVC architecture, and clean code practices that power modern enterprise solutions.
-          </p>
+          <div class="subtitle">Full Stack .NET Developer</div>
+          <p class="description">I build scalable and efficient web applications using ASP.NET Core, Entity Framework, and modern front-end technologies. My expertise spans the entire development lifecycle, from database design to RESTful API development and creating responsive user interfaces.</p>
           <div class="cta">
             <a class="btn btn-primary" href="#projects"><i class="fas fa-code"></i> View Projects</a>
             <a class="btn btn-ghost" href="#contact"><i class="fas fa-envelope"></i> Get in Touch</a>
@@ -67,29 +213,46 @@
     <!-- Skills -->
     <section id="skills">
       <div class="container">
-        <h2 class="section-title">My Skills</h2>
-        <p class="section-sub">I specialize in backend development and full stack architecture using Microsoft technologies.</p>
-        <div class="skills-grid">
+        <h2 class="section-title reveal">My Skills</h2>
+        <p class="section-sub reveal">I am proficient in a variety of technologies and frameworks essential for modern full-stack development.</p>
+        <div class="skills-grid reveal">
+          
           <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-code"></i></div>
-            <h3>C# & ASP.NET Core</h3>
-            <p>Building robust backend systems, RESTful APIs, and MVC web apps using modern .NET frameworks.</p>
+            <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+            <h3>ASP.NET Core</h3>
+            <p>Building robust web applications and RESTful APIs using ASP.NET Core MVC and Web API with clean architecture principles.</p>
           </div>
+
           <div class="skill-card">
             <div class="skill-icon"><i class="fas fa-database"></i></div>
-            <h3>SQL Server</h3>
-            <p>Designing and optimizing relational databases, writing efficient queries, and managing data integrity.</p>
+            <h3>Entity Framework Core</h3>
+            <p>Database design and management using EF Core with Code-First approach, migrations, and LINQ queries for efficient data access.</p>
           </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+            <h3>C# & .NET</h3>
+            <p>Strong foundation in C# programming, object-oriented principles, SOLID design patterns, and .NET framework ecosystem.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-server"></i></div>
+            <h3>SQL Server</h3>
+            <p>Designing normalized databases, writing complex queries, stored procedures, and optimizing database performance.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Front-end development using HTML5, CSS3, JavaScript, Bootstrap, and Razor Views for creating responsive interfaces.</p>
+          </div>
+
           <div class="skill-card">
             <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
-            <h3>Entity Framework Core</h3>
-            <p>Implementing ORM-based data access with migrations, LINQ queries, and model binding.</p>
+            <h3>Architecture & Design</h3>
+            <p>Implementing MVC pattern, Repository pattern, Service Layer architecture, Dependency Injection, and API best practices.</p>
           </div>
-          <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
-            <h3>HTML, CSS, JavaScript</h3>
-            <p>Creating responsive frontends and integrating them with backend APIs for full stack delivery.</p>
-          </div>
+
         </div>
       </div>
     </section>
@@ -97,60 +260,66 @@
     <!-- Projects -->
     <section id="projects">
       <div class="container">
-        <h2 class="section-title">Recent Projects</h2>
-        <p class="section-sub">Showcasing my ability to build scalable APIs and web applications.</p>
+        <h2 class="section-title reveal">Recent Projects</h2>
+        <p class="section-sub reveal">Showcasing my ability to build complete full-stack applications using modern .NET technologies.</p>
         <div class="projects-grid">
-          <article class="project-card">
-            <h3>Retail Data Dashboard</h3>
-            <p>Originally built in Power BI, now reimagined as a backend-driven dashboard with ASP.NET Core APIs serving data to a frontend visualization layer.</p>
-            <span class="tag">ASP.NET Core</span><span class="tag">REST API</span><span class="tag">Data Visualization</span>
-          </article>
-          <article class="project-card">
-            <h3>Pizza Sales Analysis</h3>
-            <p>Converted SQL + Excel analysis into a Web API project that exposes endpoints for querying pizza sales, peak hours, and menu optimization.</p>
-            <span class="tag">SQL Server</span><span class="tag">ASP.NET Core</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- .NET Projects -->
-    <section id="dotnet-projects">
-      <div class="container">
-        <h2 class="section-title">.NET Projects</h2>
-        <p class="section-sub">Showcasing my backend development skills with ASP.NET Core and Web API.</p>
-        <div class="projects-grid">
-
-          <article class="project-card">
-            <h3>MVC EF Core CRUD Microproject</h3>
-            <p>Built a microproject using ASP.NET MVC and Entity Framework Core to demonstrate CRUD operations with clean architecture and database-first approach.</p>
-            <span class="tag">ASP.NET MVC</span><span class="tag">Entity Framework Core</span><span class="tag">CRUD</span>
-            <div style="margin-top:1rem">
-              <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject" target="_blank">
-                <i class="fab fa-github"></i> GitHub Repo
-              </a>
+          
+          <article class="project-card reveal">
+            <div class="project-image" style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);display:grid;place-items:center;color:#fff;font-size:3rem" aria-hidden="true">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="project-content">
+              <h3>MVC EF Core CRUD Microproject</h3>
+              <p>A complete CRUD application built with ASP.NET Core MVC and Entity Framework Core using Code-First approach. Features include student/employee management with full Create, Read, Update, Delete operations, database migrations, and clean MVC architecture.</p>
+              <div style="margin-top:.75rem">
+                <span class="tag">ASP.NET Core MVC</span>
+                <span class="tag">Entity Framework Core</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">LINQ</span>
+                <span class="tag">Razor Views</span>
+              </div>
+              <div style="margin-top:1rem">
+                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card">
-            <h3>CRUD Operations using RESTful API</h3>
-            <p>Developed a RESTful Web API in ASP.NET Core to perform CRUD operations with DTOs, service layer, and proper dependency injection.</p>
-            <span class="tag">ASP.NET Core</span><span class="tag">Web API</span><span class="tag">CRUD</span>
-            <div style="margin-top:1rem">
-              <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api" target="_blank">
-                <i class="fab fa-github"></i> GitHub Repo
-              </a>
+          <article class="project-card reveal">
+            <div class="project-image" style="background:linear-gradient(135deg, #f093fb 0%, #f5576c 100%);display:grid;place-items:center;color:#fff;font-size:3rem" aria-hidden="true">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="project-content">
+              <h3>RESTful API with CRUD Operations</h3>
+              <p>A clean and scalable RESTful API built using ASP.NET Core Web API. Features include complete CRUD operations, DTOs for secure data transfer, model validation, service layer architecture, and Swagger integration for API documentation and testing.</p>
+              <div style="margin-top:.75rem">
+                <span class="tag">ASP.NET Core Web API</span>
+                <span class="tag">C#</span>
+                <span class="tag">Swagger</span>
+                <span class="tag">DTOs</span>
+                <span class="tag">Service Layer</span>
+              </div>
+              <div style="margin-top:1rem">
+                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card">
-            <h3>Student Notification System</h3>
-            <p>Created a notification system using ASP.NET Core to send updates to students. Implemented service-based architecture and integrated with backend APIs for real-time communication.</p>
-            <span class="tag">ASP.NET Core</span><span class="tag">Notifications</span><span class="tag">Web API</span>
-            <div style="margin-top:1rem">
-              <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/StudentNotification" target="_blank">
-                <i class="fab fa-github"></i> GitHub Repo
-              </a>
+          <article class="project-card reveal">
+            <div class="project-image" style="background:linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);display:grid;place-items:center;color:#fff;font-size:3rem" aria-hidden="true">
+              <i class="fas fa-bell"></i>
+            </div>
+            <div class="project-content">
+              <h3>Student Notification System</h3>
+              <p>A notification management system for educational institutions built with ASP.NET Core. This application demonstrates real-world scenario implementation with features for managing and sending notifications to students efficiently.</p>
+              <div style="margin-top:.75rem">
+                <span class="tag">ASP.NET Core</span>
+                <span class="tag">.NET</span>
+                <span class="tag">MVC</span>
+                <span class="tag">SQL Server</span>
+              </div>
+              <div style="margin-top:1rem">
+                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/StudentNotification" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
             </div>
           </article>
 
@@ -161,9 +330,109 @@
     <!-- Education -->
     <section id="education">
       <div class="container">
-        <h2 class="section-title">Education & Certifications</h2>
-        <p class="section-sub">A summary of my academic background and professional qualifications.</p>
-        <div class="education-grid">
+        <h2 class="section-title reveal">Education & Certifications</h2>
+        <p class="section-sub reveal">A summary of my academic background and professional qualifications.</p>
+        <div class="education-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem">
           <div class="skill-card">
-            <h3>Bachelor of Computer Application (BCA)</h3>
-            <p>Savitribai
+            <div style="font-size:1.6rem"><i class="fas fa-graduation-cap"></i></div>
+            <h3 style="margin-top:.6rem">Bachelor of Computer Application (BCA)</h3>
+            <p>Savitribai Phule Pune University | 2025<br/>Pune, India</p>
+          </div>
+          <div class="skill-card">
+            <div style="font-size:1.6rem"><i class="fas fa-certificate"></i></div>
+            <h3 style="margin-top:.6rem">Certifications & Training</h3>
+            <p>1) ASP.NET Core MVC & Web API Development<br/>2) Entity Framework Core<br/>3) Microsoft .NET Development</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-grid reveal">
+          <div>
+            <div class="stat"><strong>1+</strong><div style="color:var(--muted)">Year of Experience</div></div>
+            <div style="height:12px"></div>
+            <div class="stat"><strong>5+</strong><div style="color:var(--muted)">Projects Completed</div></div>
+          </div>
+          <div>
+            <p>Hello! I'm Hrishikesh, a passionate Full Stack .NET Developer with a strong background in computer science. My journey in software development began with a fascination for building scalable web applications that solve real-world problems. I specialize in the complete development lifecycle, from designing database schemas to creating RESTful APIs and building responsive user interfaces.</p>
+            <p>I thrive on challenges and am constantly learning new technologies and best practices in the .NET ecosystem. Whether it's implementing clean architecture patterns, optimizing database queries, or building feature-rich web applications, my goal is always to deliver robust, maintainable, and efficient solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Get in Touch</h2>
+        <p class="section-sub reveal">I'm always open to discussing new projects, collaboration opportunities, and full-time positions.</p>
+        <div class="contact-grid reveal">
+          <div>
+            <div style="display:grid;gap:1rem">
+              <div style="display:flex;gap:1rem;align-items:center;background:transparent;padding:.9rem;border-radius:10px">
+                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fas fa-map-marker-alt"></i></div>
+                <div><h4 style="margin:0">Location</h4><div style="color:var(--muted)">Pune, India</div></div>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:center;padding:.9rem;border-radius:10px">
+                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fas fa-envelope"></i></div>
+                <div><h4 style="margin:0">Email</h4><div><a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></div></div>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:center;padding:.9rem;border-radius:10px">
+                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fab fa-linkedin-in"></i></div>
+                <div><h4 style="margin:0">LinkedIn</h4><div><a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></div></div>
+              </div>
+            </div>
+          </div>
+
+          <form action="https://formspree.io/f/mqazkqlk" method="POST">
+            <label>Name <input type="text" name="name" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></label>
+            <div style="height:8px"></div>
+            <label>Email <input type="email" name="email" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)"></label>
+            <div style="height:8px"></div>
+            <label>Message <textarea name="message" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06);min-height:120px"></textarea></label>
+            <div style="height:10px"></div>
+            <button class="btn btn-primary" type="submit" style="border-radius:12px">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div style="display:flex;justify-content:center;gap:12px;margin-bottom:8px">
+          <a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/hrishikeshkulat-cmd" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/hrishikeshkulat" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div style="color:var(--muted);">&copy; 2025 Hrishikesh Kulat. All Rights Reserved.</div>
+      </div>
+    </footer>
+  </main>
+
+  <button class="top-btn" id="topBtn" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Preloader
+    window.addEventListener('load',()=>{
+      const p = document.getElementById('preloader');
+      p.style.opacity = '0'; p.style.transition = 'opacity .4s ease'; setTimeout(()=>p.remove(),450);
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const saved = localStorage.getItem('theme');
+    if(saved === 'dark') body.classList.add('dark-mode');
+    function updateIcon(){ themeToggle.innerHTML = body.classList.contains('dark-mode')? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>'; }
+    updateIcon();
+    themeToggle.addEventListener('click',()=>{ body.classList.toggle('dark-mode'); localStorage.setItem('theme', body.classList.contains('dark-mode')? 'dark':'light'); updateIcon(); });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    hamburger.addEventListener('click',()=>{
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expande)
