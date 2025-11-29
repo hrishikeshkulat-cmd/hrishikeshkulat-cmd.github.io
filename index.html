@@ -23,89 +23,255 @@
       --nav-h:72px;
     }
     body.dark-mode{
-      --bg:#071026;
-      --text:#e6eef8;
-      --muted:#b9c7d9;
-      --card-bg: rgba(12,20,30,0.6);
-      --input-bg: rgba(12,20,30,0.45);
-      --tag-bg: rgba(99,102,241,0.14);
-      --glass: rgba(255,255,255,0.03);
+      --bg:#020617;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --card-bg: rgba(15,23,42,0.9);
+      --input-bg: rgba(15,23,42,0.95);
+      --tag-bg: rgba(79,70,229,0.18);
+      --glass: rgba(15,23,42,0.75);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color:var(--text);background:var(--bg);overflow-x:hidden;font-size:16px;
+      margin:0;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:var(--text);
+      background:radial-gradient(circle at top, #e5e7eb 0, #ffffff 38%, #e5e7eb 100%);
+      overflow-x:hidden;
+      font-size:16px;
     }
-    nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);display:flex;align-items:center;z-index:1200;}
+    body.dark-mode{
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56,189,248,0.06) 0, transparent 40%),
+        radial-gradient(circle at 100% 0%, rgba(129,140,248,0.09) 0, transparent 45%),
+        radial-gradient(circle at 10% 100%, rgba(45,212,191,0.08) 0, transparent 50%),
+        #020617;
+    }
+
+    nav{
+      position:fixed;inset:0 0 auto 0;height:var(--nav-h);
+      display:flex;align-items:center;z-index:1200;
+      backdrop-filter:blur(18px);
+      background:linear-gradient(to bottom,rgba(15,23,42,0.9),rgba(15,23,42,0.75),transparent);
+      border-bottom:1px solid rgba(148,163,184,0.18);
+    }
+    body:not(.dark-mode) nav{
+      background:linear-gradient(to bottom,rgba(248,250,252,0.98),rgba(248,250,252,0.9),transparent);
+      border-bottom:1px solid rgba(148,163,184,0.14);
+    }
     .nav-wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:800;font-size:1.25rem;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .logo{font-weight:800;font-size:1.25rem;letter-spacing:-0.02em;
+      background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .nav-links{display:flex;gap:1.25rem;align-items:center}
     .nav-links a{color:var(--muted);text-decoration:none;font-weight:600;padding:0.4rem 0.5rem;transition:transform .25s,color .25s}
     .nav-links a:hover{color:var(--primary-color);transform:translateY(-3px)}
-    .hamburger{display:none;width:46px;height:46px;border-radius:10px;align-items:center;justify-content:center;cursor:pointer}
+    .hamburger{display:none;width:46px;height:46px;border-radius:10px;align-items:center;justify-content:center;cursor:pointer;border:none;background:transparent}
     .hamburger span{display:block;width:20px;height:2px;background:var(--muted);border-radius:2px;transition:all .25s}
-    .hero{min-height:100vh;display:grid;place-items:center;position:relative;padding:0 1.25rem}
-    .hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:360px 1fr;gap:2.5rem;align-items:center}
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      position:relative;
+      padding:0 1.25rem;
+      overflow:hidden;
+    }
+    .hero-inner{
+      max-width:1100px;width:100%;
+      display:grid;grid-template-columns:360px 1fr;gap:2.5rem;align-items:center;
+      position:relative;z-index:1;
+    }
+
     .profile-pic{
       width:320px;height:320px;border-radius:20px;overflow:hidden;
       background-image:url('https://raw.githubusercontent.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/main/assets/images/profile.jpg');
       background-size:cover;background-repeat:no-repeat;background-position:50% 20%;
-      box-shadow:0 30px 60px rgba(2,6,23,0.25);border:6px solid rgba(255,255,255,0.06);
+      box-shadow:0 30px 80px rgba(15,23,42,0.6);
+      border:6px solid rgba(15,23,42,0.85);
     }
-    .hero-copy h1{font-size:clamp(2rem,4.5vw,3.6rem);margin:0;line-height:1;font-weight:900;background:linear-gradient(90deg,#fff,rgba(255,255,255,0.95));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .subtitle{font-size:1.125rem;margin-top:.4rem;color:var(--muted);font-weight:600}
-    .description{margin-top:1.25rem;color:var(--muted);max-width:55ch;line-height:1.85;font-size:1.05rem}
-    .cta{display:flex;gap:0.75rem;margin-top:1.5rem}
-    .btn{padding:0.9rem 1.6rem;border-radius:999px;font-weight:700;display:inline-flex;gap:0.6rem;align-items:center;text-decoration:none;cursor:pointer;border:1px solid rgba(255,255,255,0.04)}
-    .btn-primary{background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));color:#fff}
-    .btn-ghost{background:transparent;border:1px solid rgba(17,24,39,0.06);color:var(--muted)}
+    body:not(.dark-mode) .profile-pic{
+      box-shadow:0 30px 60px rgba(15,23,42,0.22);
+      border-color:rgba(255,255,255,0.6);
+    }
+
+    .hero-copy h1{
+      font-size:clamp(2.2rem,4.5vw,3.8rem);margin:0;line-height:1.05;font-weight:900;letter-spacing:-0.03em;
+      background:linear-gradient(120deg,#f9fafb,#e5e7eb,#c7d2fe);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    body.dark-mode .hero-copy h1{
+      background:linear-gradient(120deg,#e5e7eb,#f9fafb,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .subtitle{font-size:1.1rem;margin-top:.6rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.16em}
+    .description{margin-top:1.25rem;color:var(--muted);max-width:55ch;line-height:1.85;font-size:1.02rem}
+
+    .cta{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.8rem}
+    .btn{
+      padding:0.9rem 1.6rem;border-radius:999px;font-weight:700;display:inline-flex;gap:0.6rem;align-items:center;
+      text-decoration:none;cursor:pointer;border:1px solid transparent;
+      box-shadow:0 18px 45px rgba(15,23,42,0.28);
+      transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .18s;
+      font-size:.95rem;
+    }
+    .btn-primary{
+      background:linear-gradient(120deg,var(--primary-color),var(--secondary-color));
+      color:#f9fafb;
+    }
+    .btn-ghost{
+      background:rgba(15,23,42,0.02);
+      color:var(--muted);
+      border-color:rgba(148,163,184,0.4);
+      box-shadow:none;
+    }
+    body.dark-mode .btn-ghost{
+      background:rgba(15,23,42,0.85);
+      border-color:rgba(148,163,184,0.4);
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 24px 55px rgba(15,23,42,0.4)}
+
+    /* Cinematic CODE BACKGROUND (M2 – side scrolling) */
+    .code-bg{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      opacity:0.55;
+      mix-blend-mode:soft-light;
+    }
+    body:not(.dark-mode) .code-bg{
+      opacity:0.4;
+      mix-blend-mode:multiply;
+    }
+    .code-row{
+      position:absolute;
+      white-space:nowrap;
+      font-family: "Consolas","Fira Code","JetBrains Mono",monospace;
+      font-size:11px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:rgba(15,23,42,0.22);
+      animation:code-scroll 28s linear infinite;
+      will-change:transform;
+      filter:blur(0.15px);
+    }
+    body.dark-mode .code-row{
+      color:rgba(148,163,184,0.38);
+    }
+    @keyframes code-scroll{
+      0%{transform:translateX(20%);}
+      100%{transform:translateX(-80%);}
+    }
+
     section{padding:6rem 1.25rem;}
     .container{max-width:var(--maxw);margin:0 auto}
-    .section-title{font-size:2.4rem;font-weight:900;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.5rem}
-    .section-sub{color:var(--muted);margin-bottom:2.25rem;font-size:1.02rem}
+    .section-title{
+      font-size:2.1rem;font-weight:800;letter-spacing:-0.02em;
+      background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      margin-bottom:0.4rem;
+    }
+    .section-sub{color:var(--muted);margin-bottom:2.25rem;font-size:1rem}
+
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem}
-    .skill-card{padding:1.6rem;border-radius:16px;background:var(--card-bg);transition:transform .25s}
-    .skill-card:hover{transform:translateY(-8px)}
-    .skill-icon{font-size:2.2rem;margin-bottom:0.6rem;display:inline-block}
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.2rem}
-    .project-card{border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:var(--card-bg)}
-    .project-image{height:220px;background-size:cover;background-position:center}
+    .skill-card{
+      padding:1.6rem;border-radius:18px;background:var(--card-bg);
+      box-shadow:0 18px 40px rgba(15,23,42,0.08);
+      border:1px solid rgba(148,163,184,0.22);
+      backdrop-filter:blur(12px);
+      transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s;
+    }
+    .skill-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 60px rgba(15,23,42,0.16);
+      border-color:rgba(129,140,248,0.8);
+    }
+    .skill-icon{font-size:2.2rem;margin-bottom:0.7rem;display:inline-block;color:var(--primary-color)}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.4rem}
+    .project-card{
+      border-radius:18px;overflow:hidden;display:flex;flex-direction:column;
+      background:var(--card-bg);
+      box-shadow:0 18px 40px rgba(15,23,42,0.14);
+      border:1px solid rgba(148,163,184,0.22);
+      backdrop-filter:blur(12px);
+      position:relative;
+    }
+    .project-image{height:220px;background-size:cover;background-position:center;position:relative}
+    .project-image::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(15,23,42,0.7),transparent 60%);
+    }
     .project-content{padding:1.25rem}
-    .tag{display:inline-block;padding:.35rem .65rem;border-radius:999px;font-size:.78rem;background:var(--tag-bg);color:var(--primary-color);margin-right:6px}
+    .tag{display:inline-block;padding:.35rem .7rem;border-radius:999px;font-size:.78rem;font-weight:600;background:var(--tag-bg);color:var(--primary-color);margin:0 6px 6px 0}
+
     .about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;align-items:center}
-    .stat{background:var(--card-bg);border-radius:12px;padding:1.1rem;text-align:center}
+    .stat{
+      background:var(--card-bg);border-radius:14px;padding:1.1rem;text-align:center;
+      border:1px solid rgba(148,163,184,0.28);box-shadow:0 12px 30px rgba(15,23,42,0.12)
+    }
     .stat strong{display:block;font-size:1.6rem}
+
+    .top-btn{
+      position:fixed;right:18px;bottom:18px;width:50px;height:50px;border-radius:999px;
+      display:none;place-items:center;border:none;
+      background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));
+      color:#f9fafb;box-shadow:0 18px 40px rgba(15,23,42,0.6);cursor:pointer;z-index:1400;
+    }
+
     footer{padding:3rem 1.25rem;text-align:center}
-    @media(max-width:980px){.hero-inner{grid-template-columns:260px 1fr}.hamburger{display:flex}.nav-links{display:none}}
-    @media(max-width:720px){.hero-inner{grid-template-columns:1fr;text-align:center}.profile-pic{width:220px;height:220px;margin:0 auto}.about-grid{grid-template-columns:1fr}}
+
+    @media(max-width:980px){
+      .hero-inner{grid-template-columns:260px 1fr}
+      .hamburger{display:flex}
+      .nav-links{display:none}
+    }
+    @media(max-width:720px){
+      .hero-inner{grid-template-columns:1fr;text-align:center;gap:1.4rem}
+      .profile-pic{width:220px;height:220px;margin:0 auto}
+      .about-grid{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+    }
+
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
   </style>
 </head>
 <body>
+  <!-- Preloader -->
   <div id="preloader" style="position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);z-index:9999">
-    <div style="width:64px;height:64px;border-radius:50%;border:8px solid rgba(0,0,0,0.06);border-top-color:var(--primary-color);animation:spin 1s linear infinite"></div>
+    <div style="width:64px;height:64px;border-radius:50%;border:8px solid rgba(148,163,184,0.25);border-top-color:var(--primary-color);animation:spin 1s linear infinite"></div>
   </div>
 
+  <!-- Nav -->
   <nav id="navbar">
     <div class="nav-wrap">
       <div class="logo">HK</div>
       <div class="nav-links">
-        <a href="#home">Home</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
         <a href="https://github.com/hrishikeshkulat-cmd/hrishikeshkulat-cmd.github.io/blob/main/HRISHIKESH%20KULAT%20RESUME.pdf" target="_blank">Resume</a>
-        <button id="theme-toggle" class="btn btn-ghost"><i class="fas fa-moon"></i></button>
+        <button id="theme-toggle" class="btn btn-ghost" type="button" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
       </div>
-      <button class="hamburger" id="hamburger"><span></span><span style="margin-top:6px"></span></button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation"><span></span><span style="margin-top:6px"></span></button>
     </div>
   </nav>
 
   <main>
+    <!-- Hero with cinematic code background -->
     <section id="home" class="hero" style="padding-top:100px;">
+      <div class="code-bg code-bg-hero" aria-hidden="true"></div>
+
       <div class="hero-inner container">
         <div class="profile-pic"></div>
         <div class="hero-copy">
           <h1>Hrishikesh Kulat</h1>
           <div class="subtitle">Full Stack .NET + Angular Developer</div>
-          <p class="description">I build production-ready full-stack applications using ASP.NET Core, Entity Framework Core, SQL Server, and Angular for the frontend — focusing on clean architecture, REST APIs, scalable UI structure and smooth user experience.</p>
+          <p class="description">
+            I build production-ready full-stack applications using ASP.NET Core, Entity Framework Core, SQL Server, and Angular on the frontend — focusing on clean architecture, REST APIs, scalable UI structure and smooth user experience.
+          </p>
           <div class="cta">
             <a class="btn btn-primary" href="#projects"><i class="fas fa-code"></i> View Projects</a>
             <a class="btn btn-ghost" href="#contact"><i class="fas fa-envelope"></i> Get in Touch</a>
@@ -120,17 +286,39 @@
         <h2 class="section-title">My Skills</h2>
         <p class="section-sub">Tools and technologies I use to build full-stack web applications.</p>
         <div class="skills-grid">
-          <div class="skill-card"><div class="skill-icon"><i class="fas fa-code"></i></div><h3>C#</h3><p>Strong base in modern C# — OOP, async/await, DTOs, LINQ and clean service-layer development.</p></div>
-          <div class="skill-card"><div class="skill-icon"><i class="fas fa-server"></i></div><h3>ASP.NET Core</h3><p>Building Web APIs & MVC with routing, middleware, dependency injection and layered architecture.</p></div>
-          <div class="skill-card"><div class="skill-icon"><i class="fas fa-database"></i></div><h3>Entity Framework Core / SQL Server</h3><p>Code-first EF Core, migrations, async DB calls, relations & optimized SQL queries.</p></div>
-          <div class="skill-card"><div class="skill-icon"><i class="fab fa-angular"></i></div><h3>Angular & TypeScript</h3><p>Hands-on with components, dependency injection, routing, services and REST API consumption — actively building scalable front-end modules.</p></div>
-          <div class="skill-card"><div class="skill-icon"><i class="fab fa-git-alt"></i></div><h3>Git & Tooling</h3><p>Version control, clean commits, debugging & Visual Studio workflows for maintainable development.</p></div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h3>C#</h3>
+            <p>Strong base in modern C# — OOP, async/await, DTOs, LINQ and clean service-layer development.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-server"></i></div>
+            <h3>ASP.NET Core</h3>
+            <p>Building Web APIs & MVC with routing, middleware, dependency injection and layered architecture.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <h3>Entity Framework Core / SQL Server</h3>
+            <p>Code-first EF Core, migrations, async DB calls, relations & optimized SQL queries.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-angular"></i></div>
+            <h3>Angular & TypeScript</h3>
+            <p>Hands-on with components, dependency injection, routing, services and REST API consumption — actively building scalable front-end modules.</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+            <h3>Git & Tooling</h3>
+            <p>Version control, clean commits, debugging & Visual Studio workflows for maintainable development.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
+    <!-- Projects with cinematic code background -->
+    <section id="projects" style="position:relative;overflow:hidden;">
+      <div class="code-bg code-bg-projects" aria-hidden="true"></div>
+
       <div class="container">
         <h2 class="section-title">Recent Projects</h2>
         <p class="section-sub">Hands-on .NET microprojects demonstrating MVC, EF Core and REST API patterns.</p>
@@ -140,8 +328,14 @@
             <div class="project-content">
               <h3>MVC + EF Core CRUD Microproject</h3>
               <p>Complete CRUD module using ASP.NET Core MVC and EF Core (Code-First). Demonstrates models, DbContext, migrations and Razor-based CRUD flow.</p>
-              <div style="margin-top:.75rem"><span class="tag">ASP.NET MVC</span><span class="tag">EF Core</span><span class="tag">SQL Server</span></div>
-              <div style="margin-top:1rem"><a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+              <div style="margin-top:.75rem">
+                <span class="tag">ASP.NET MVC</span>
+                <span class="tag">EF Core</span>
+                <span class="tag">SQL Server</span>
+              </div>
+              <div style="margin-top:1rem">
+                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/mvc-efcore-crud-microproject" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
             </div>
           </div>
 
@@ -150,8 +344,14 @@
             <div class="project-content">
               <h3>CRUD Operations using RESTful API</h3>
               <p>Clean Web API architecture demonstrating complete CRUD endpoints with DTOs, validation, layered service pattern and Swagger UI testing.</p>
-              <div style="margin-top:.75rem"><span class="tag">Web API</span><span class="tag">C#</span><span class="tag">Swagger</span></div>
-              <div style="margin-top:1rem"><a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+              <div style="margin-top:.75rem">
+                <span class="tag">Web API</span>
+                <span class="tag">C#</span>
+                <span class="tag">Swagger</span>
+              </div>
+              <div style="margin-top:1rem">
+                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/Crud-operations-using-Restful-api" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
             </div>
           </div>
 
@@ -160,8 +360,13 @@
             <div class="project-content">
               <h3>Student Notification System</h3>
               <p>A simple & clear MVC app for managing Students and Notifications using EF Core — focusing on clean controller design and reusable Razor Views.</p>
-              <div style="margin-top:.75rem"><span class="tag">ASP.NET MVC</span><span class="tag">EF Core</span></div>
-              <div style="margin-top:1rem"><a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/StudentNotification" target="_blank"><i class="fab fa-github"></i> GitHub</a></div>
+              <div style="margin-top:.75rem">
+                <span class="tag">ASP.NET MVC</span>
+                <span class="tag">EF Core</span>
+              </div>
+              <div style="margin-top:1rem">
+                <a class="btn btn-primary" href="https://github.com/hrishikeshkulat-cmd/StudentNotification" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              </div>
             </div>
           </div>
         </div>
@@ -189,13 +394,26 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-grid">
           <div>
-            <div class="stat"><strong>0.6+</strong><div style="color:var(--muted)">Months of Experience</div></div>
+            <div class="stat">
+              <strong>0.6+</strong>
+              <div style="color:var(--muted)">Months of Experience</div>
+            </div>
             <div style="height:12px"></div>
-            <div class="stat"><strong>3+</strong><div style="color:var(--muted)">Projects Completed</div></div>
+            <div class="stat">
+              <strong>3+</strong>
+              <div style="color:var(--muted)">Projects Completed</div>
+            </div>
           </div>
           <div>
-            <p>Hello! I'm Hrishikesh — a Full Stack .NET + Angular developer passionate about building real-world applications. I specialize in ASP.NET Core for API and backend logic, EF Core for database operations, SQL Server for relational data, and Angular for scalable, component-driven UI.</p>
-            <p>I enjoy writing clean and understandable code with proper layering and separation of concerns. Currently, I'm actively leveling up my Angular front-end development to complement my strong .NET backend skills — aiming to build smooth and complete end-to-end applications.</p>
+            <p>
+              Hello! I'm Hrishikesh — a Full Stack .NET + Angular developer passionate about building real-world applications.
+              I specialize in ASP.NET Core for API and backend logic, EF Core for database operations, SQL Server for relational data,
+              and Angular for scalable, component-driven UI.
+            </p>
+            <p>
+              I enjoy writing clean and understandable code with proper layering and separation of concerns.
+              Currently, I'm actively leveling up my Angular front-end development to complement my strong .NET backend skills — aiming to build smooth and complete end-to-end applications.
+            </p>
           </div>
         </div>
       </div>
@@ -210,25 +428,51 @@
           <div>
             <div style="display:grid;gap:1rem">
               <div style="display:flex;gap:1rem;align-items:center;padding:.9rem;border-radius:10px">
-                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fas fa-map-marker-alt"></i></div>
-                <div><h4 style="margin:0">Location</h4><div style="color:var(--muted)">Pune, India</div></div>
+                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4 style="margin:0">Location</h4>
+                  <div style="color:var(--muted)">Pune, India</div>
+                </div>
               </div>
               <div style="display:flex;gap:1rem;align-items:center;padding:.9rem;border-radius:10px">
-                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fas fa-envelope"></i></div>
-                <div><h4 style="margin:0">Email</h4><div><a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></div></div>
+                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 style="margin:0">Email</h4>
+                  <div><a href="mailto:hrishikeshkulat@gmail.com">hrishikeshkulat@gmail.com</a></div>
+                </div>
               </div>
               <div style="display:flex;gap:1rem;align-items:center;padding:.9rem;border-radius:10px">
-                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff"><i class="fab fa-linkedin-in"></i></div>
-                <div><h4 style="margin:0">LinkedIn</h4><div><a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></div></div>
+                <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));display:grid;place-items:center;color:#fff">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <h4 style="margin:0">LinkedIn</h4>
+                  <div><a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank">linkedin.com/in/hrishikesh-kulat-28b559373</a></div>
+                </div>
               </div>
             </div>
           </div>
 
           <form action="https://formspree.io/f/mqazkqlk" method="POST">
-            <label>Name<input type="text" name="name" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px"></label>
-            <label>Email<input type="email" name="email" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px"></label>
-            <label>Message<textarea name="message" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;min-height:120px"></textarea></label>
-            <button class="btn btn-primary" type="submit" style="border-radius:12px;margin-top:.6rem">Send Message <i class="fas fa-paper-plane"></i></button>
+            <label>
+              Name
+              <input type="text" name="name" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(148,163,184,0.5);background:var(--input-bg);color:var(--text)">
+            </label>
+            <label style="display:block;margin-top:.6rem">
+              Email
+              <input type="email" name="email" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(148,163,184,0.5);background:var(--input-bg);color:var(--text)">
+            </label>
+            <label style="display:block;margin-top:.6rem">
+              Message
+              <textarea name="message" required style="width:100%;padding:.6rem;margin-top:.4rem;border-radius:8px;border:1px solid rgba(148,163,184,0.5);background:var(--input-bg);color:var(--text);min-height:120px"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit" style="border-radius:12px;margin-top:.9rem">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
           </form>
         </div>
       </div>
@@ -237,27 +481,122 @@
     <footer>
       <div class="container">
         <div style="display:flex;justify-content:center;gap:12px;margin-bottom:8px">
-          <a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/hrishikeshkulat-cmd" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/hrishikeshkulat" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.04)"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com/in/hrishikesh-kulat-28b559373" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(15,23,42,0.04)">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/hrishikeshkulat-cmd" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(15,23,42,0.04)">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/hrishikeshkulat" target="_blank" style="display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(15,23,42,0.04)">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
         <div style="color:var(--muted)">&copy; 2025 Hrishikesh Kulat. All Rights Reserved.</div>
       </div>
     </footer>
   </main>
 
-  <button class="top-btn" id="topBtn"><i class="fas fa-arrow-up"></i></button>
+  <button class="top-btn" id="topBtn" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
-    window.addEventListener('load',()=>{const p=document.getElementById('preloader');p.style.opacity='0';p.style.transition='opacity .4s';setTimeout(()=>p.remove(),450)})
-    const themeToggle=document.getElementById('theme-toggle');const body=document.body;
-    const saved=localStorage.getItem('theme');if(saved==='dark')body.classList.add('dark-mode');
-    function updateIcon(){themeToggle.innerHTML=body.classList.contains('dark-mode')?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';}
+    // Preloader
+    window.addEventListener('load',()=>{
+      const p=document.getElementById('preloader');
+      if(p){
+        p.style.opacity='0';
+        p.style.transition='opacity .4s ease';
+        setTimeout(()=>p.remove(),450);
+      }
+    });
+
+    // Theme toggle
+    const themeToggle=document.getElementById('theme-toggle');
+    const body=document.body;
+    const saved=localStorage.getItem('theme');
+    if(saved==='dark'){body.classList.add('dark-mode');}
+    function updateIcon(){
+      if(!themeToggle)return;
+      themeToggle.innerHTML=body.classList.contains('dark-mode')
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    }
     updateIcon();
-    themeToggle.addEventListener('click',()=>{body.classList.toggle('dark-mode');localStorage.setItem('theme',body.classList.contains('dark-mode')?'dark':'light');updateIcon();});
-    const hamburger=document.getElementById('hamburger');hamburger.addEventListener('click',()=>{const nav=document.querySelector('.nav-links');if(nav.style.display==='flex'){nav.style.display='none'}else{nav.style.display='flex';nav.style.flexDirection='column'}});
-    const topBtn=document.getElementById('topBtn');window.addEventListener('scroll',()=>{topBtn.style.display=window.scrollY>400?'grid':'none'});topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-    (function(){const s=document.createElement('style');s.textContent='@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}';document.head.appendChild(s)})();
+    if(themeToggle){
+      themeToggle.addEventListener('click',()=>{
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('theme',body.classList.contains('dark-mode')?'dark':'light');
+        updateIcon();
+      });
+    }
+
+    // Mobile nav
+    const hamburger=document.getElementById('hamburger');
+    if(hamburger){
+      hamburger.addEventListener('click',()=>{
+        const nav=document.querySelector('.nav-links');
+        if(!nav)return;
+        if(nav.style.display==='flex'){
+          nav.style.display='none';
+        }else{
+          nav.style.display='flex';
+          nav.style.flexDirection='column';
+          nav.style.background='rgba(15,23,42,0.96)';
+          nav.style.position='absolute';
+          nav.style.top='70px';
+          nav.style.right='16px';
+          nav.style.padding='12px';
+          nav.style.borderRadius='12px';
+        }
+      });
+    }
+
+    // Back to top button
+    const topBtn=document.getElementById('topBtn');
+    window.addEventListener('scroll',()=>{
+      if(!topBtn)return;
+      topBtn.style.display=window.scrollY>400?'grid':'none';
+    });
+    if(topBtn){
+      topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    }
+
+    // Generate cinematic code rows for hero + projects
+    function initCodeBackground(){
+      const bgSections=document.querySelectorAll('.code-bg');
+      if(!bgSections.length)return;
+
+      const snippets=[
+        'public async Task<IActionResult> GetAllAsync()',
+        'return Ok(await _service.GetAsync());',
+        'builder.Services.AddDbContext<ApplicationDbContext>();',
+        'app.MapControllers();',
+        'export class StudentComponent implements OnInit { }',
+        'this.http.get<ApiResponse>(url).subscribe();',
+        'await _context.SaveChangesAsync();',
+        'router.get("/api/students", controller.getAll);',
+        'var query = _context.Students.AsQueryable();',
+        'ngOnInit(): void { this.loadData(); }',
+        'services.AddScoped<IEmployeeService, EmployeeService>();'
+      ];
+
+      bgSections.forEach(bg=>{
+        for(let i=0;i<14;i++){
+          const row=document.createElement('div');
+          row.className='code-row';
+          const snippet=snippets[i % snippets.length];
+          row.textContent=(snippet+'   ').repeat(12);
+          const top=Math.random()*100;
+          const duration=24+Math.random()*18; // 24s - 42s
+          const delay=-Math.random()*40;
+          row.style.top=top+'%';
+          row.style.animationDuration=duration+'s';
+          row.style.animationDelay=delay+'s';
+          bg.appendChild(row);
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded',initCodeBackground);
   </script>
 </body>
 </html>
